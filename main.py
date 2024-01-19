@@ -2,22 +2,28 @@ import json, os, time, torch
 from threading import Thread
 from faker import Faker
 from datetime import datetime
-from awq import AutoAWQForCausalLM
+# from awq import AutoAWQForCausalLM
 from transformers import AutoTokenizer, TextIteratorStreamer
 import chainlit as cl
 from chainlit.input_widget import Select, Switch, Slider
+from fastapi.middleware.wsgi import WSGIMiddleware
+from chainlit.server import app
+
+import backend.wsgi as django_app
+
+app.mount('/v1/', WSGIMiddleware(django_app.application))
 
 # os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "backend:cudaMallocAsync"
 
-model_name_or_path = "/home/ubuntu/llm_experiments/Yarn-Mistral-7B-128k-AWQ"
+# model_name_or_path = "/home/ubuntu/llm_experiments/Yarn-Mistral-7B-128k-AWQ"
 # model_name_or_path = "TheBloke/Yarn-Mistral-7B-128k-AWQ"
 # model_name_or_path = "berkeley-nest/Starling-LM-7B-alpha"
 
 # Load tokenizer
-tokenizer = AutoTokenizer.from_pretrained(model_name_or_path, trust_remote_code=True)
+# tokenizer = AutoTokenizer.from_pretrained(model_name_or_path, trust_remote_code=True)
 # Load model
 
-model = AutoAWQForCausalLM.from_quantized(model_name_or_path, fuse_layers=True, trust_remote_code=True, safetensors=True)
+# model = AutoAWQForCausalLM.from_quantized(model_name_or_path, fuse_layers=True, trust_remote_code=True, safetensors=True)
 
 
 class SpecialTextIteratorStreamer(TextIteratorStreamer):
@@ -292,8 +298,20 @@ async def setup_agent(settings):
     # if settings['repetition_penalty']:
     #     repetition_penalty_global = settings['repetition_penalty']
 
+from django.contrib.auth.models import User
+from asgiref.sync import sync_to_async
+
+
 @cl.on_message
 async def main(message: cl.Message):
+    global django_string
+
+    import django
+
+    django_string = User.objects.first().email
+
+    return await cl.Message(content=f"hi django is {django.__version__} {django_string}").send()
+
     # Your custom logic goes here...
 
     current_datetime = datetime.now()
@@ -326,3 +344,7 @@ async def return_words(words):
     for word in words:
         yield word
         time.sleep(0.1)
+
+
+
+
