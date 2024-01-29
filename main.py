@@ -14,10 +14,10 @@ model_name_or_path = "/home/ubuntu/llm_experiments/Yarn-Mistral-7B-128k-AWQ"
 # model_name_or_path = "berkeley-nest/Starling-LM-7B-alpha"
 
 # Load tokenizer
-tokenizer = AutoTokenizer.from_pretrained(model_name_or_path, trust_remote_code=True)
+tokenizer = AutoTokenizer.from_pretrained(model_name_or_path, trust_remote_code=False)
 # Load model
 
-model = AutoAWQForCausalLM.from_quantized(model_name_or_path, fuse_layers=True, trust_remote_code=True, safetensors=True)
+model = AutoAWQForCausalLM.from_quantized(model_name_or_path, fuse_layers=True, trust_remote_code=False, safetensors=True)
 
 
 class SpecialTextIteratorStreamer(TextIteratorStreamer):
@@ -55,12 +55,9 @@ async def generate_inference(filename,  temperature = None, top_p=None, top_k=No
     if not repetition_penalty:
         repetition_penalty = repetition_penalty_global
 
-    prompt = ""
-    context = open(f'/home/ubuntu/llm_experiments/input/{filename}', 'r').read()
+    context = open(f'/home/ubuntu/llm_experiments/input/{filename}', 'r').read().strip()
 
-    prompt_template=f'''{prompt}\
-    {context}
-    '''
+    prompt_template=f'{context}'
     current_datetime = datetime.now()
     formatted_datetime = current_datetime.strftime("%Y-%m-%d %H:%M:%S")
     output_filename = filename.split('.')[0] + f"-{formatted_datetime}-output." + filename.split('.')[1]
@@ -76,9 +73,9 @@ async def generate_inference(filename,  temperature = None, top_p=None, top_k=No
 
     print(f"*** Running generate at {current_datetime} with params: repetition_penalty {repetition_penalty} temperature = {temperature}, top_p={top_p}, top_k={top_k}, max_new_tokens = {max_new_tokens}, do_sample = {do_sample}")
 
-    streamer = SpecialTextIteratorStreamer(tokenizer, skip_prompt=True, skip_special_tokens=True)
+    streamer = SpecialTextIteratorStreamer(tokenizer, skip_prompt=True, skip_special_tokens=False)
 
-    if do_sample:
+    if True:
 
         kwargs = dict(
                   do_sample=True,  # Enabling stochastic mode
@@ -86,15 +83,16 @@ async def generate_inference(filename,  temperature = None, top_p=None, top_k=No
                   top_p=top_p,  # Nucleus sampling parameter
                   top_k=top_k,  # Top-k sampling parameter
                   max_new_tokens=max_new_tokens,  # Limit on token generation
-                  repetition_penalty=repetition_penalty,
+                  repetition_penalty=float(repetition_penalty),
                   streamer=streamer)
     else:
         kwargs = dict(
           do_sample=False,  # Disabling stochastic mode
           max_new_tokens=max_new_tokens,  # Limit on token generation
-          repetition_penalty=repetition_penalty,
+          repetition_penalty=float(repetition_penalty),
           streamer=streamer)
 
+    print(kwargs, token_input)
     thread = Thread(target=model.generate, args=[token_input], kwargs=kwargs)
 
     thread.start()
@@ -326,3 +324,16 @@ async def return_words(words):
     for word in words:
         yield word
         time.sleep(0.1)
+
+from fastapi import FastAPI, JSONResponse
+from pydantic import BaseModel
+
+
+from chainlit.server import app
+
+@app.post("/api/prompt")
+def hello(request: Request):
+    print(request.headers)
+    prompt = request.data
+
+    return JSONResponse(request.data)
