@@ -6,6 +6,12 @@ from awq import AutoAWQForCausalLM
 from transformers import AutoTokenizer, TextIteratorStreamer
 import chainlit as cl
 from chainlit.input_widget import Select, Switch, Slider
+from fastapi.middleware.wsgi import WSGIMiddleware
+from chainlit.server import app
+
+import backend.wsgi as django_app
+
+app.mount('/v1/', WSGIMiddleware(django_app.application))
 
 # os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "backend:cudaMallocAsync"
 
@@ -290,8 +296,20 @@ async def setup_agent(settings):
     # if settings['repetition_penalty']:
     #     repetition_penalty_global = settings['repetition_penalty']
 
+from django.contrib.auth.models import User
+from asgiref.sync import sync_to_async
+
+
 @cl.on_message
 async def main(message: cl.Message):
+    global django_string
+
+    import django
+
+    django_string = User.objects.first().email
+
+    return await cl.Message(content=f"hi django is {django.__version__} {django_string}").send()
+
     # Your custom logic goes here...
 
     current_datetime = datetime.now()
@@ -337,3 +355,6 @@ def hello(request: Request):
     prompt = request.data
 
     return JSONResponse(request.data)
+
+
+
