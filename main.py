@@ -2,7 +2,6 @@ import json, os, time, torch
 from threading import Thread
 from faker import Faker
 from datetime import datetime
-# from awq import AutoAWQForCausalLM
 from transformers import AutoTokenizer, TextIteratorStreamer
 import chainlit as cl
 from chainlit.input_widget import Select, Switch, Slider
@@ -15,15 +14,20 @@ app.mount('/v1/', WSGIMiddleware(django_app.application))
 
 # os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "backend:cudaMallocAsync"
 
-# model_name_or_path = "/home/ubuntu/llm_experiments/Yarn-Mistral-7B-128k-AWQ"
-# model_name_or_path = "TheBloke/Yarn-Mistral-7B-128k-AWQ"
-# model_name_or_path = "berkeley-nest/Starling-LM-7B-alpha"
+def on_server():
+    return os.path.isdir('/home/ubuntu/llm_experiments')
 
-# Load tokenizer
-tokenizer = AutoTokenizer.from_pretrained(model_name_or_path, trust_remote_code=False)
-# Load model
+if on_server():
+    model_name_or_path = "/home/ubuntu/llm_experiments/Yarn-Mistral-7B-128k-AWQ"
+    # model_name_or_path = "TheBloke/Yarn-Mistral-7B-128k-AWQ"
+    # model_name_or_path = "berkeley-nest/Starling-LM-7B-alpha"
 
-model = AutoAWQForCausalLM.from_quantized(model_name_or_path, fuse_layers=True, trust_remote_code=False, safetensors=True)
+    # Load tokenizer
+    tokenizer = AutoTokenizer.from_pretrained(model_name_or_path, trust_remote_code=False)
+    # Load model
+    from awq import AutoAWQForCausalLM
+
+    model = AutoAWQForCausalLM.from_quantized(model_name_or_path, fuse_layers=True, trust_remote_code=False, safetensors=True)
 
 
 class SpecialTextIteratorStreamer(TextIteratorStreamer):
@@ -343,7 +347,7 @@ async def return_words(words):
         yield word
         time.sleep(0.1)
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request, Response
 from pydantic import BaseModel
 
 
@@ -352,9 +356,11 @@ from chainlit.server import app
 @app.post("/api/prompt")
 def hello(request: Request):
     print(request.headers)
-    prompt = request.data
-
-    return JSONResponse(request.data)
+    if on_server():
+        result = request.body()
+    else:
+        result = json.dumps(request.body())
+    return {"result": result}
 
 
 
