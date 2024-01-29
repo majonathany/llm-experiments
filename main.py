@@ -2,7 +2,7 @@ import json, os, time, torch
 from threading import Thread
 from faker import Faker
 from datetime import datetime
-from awq import AutoAWQForCausalLM
+# from awq import AutoAWQForCausalLM
 from transformers import AutoTokenizer, TextIteratorStreamer
 import chainlit as cl
 from chainlit.input_widget import Select, Switch, Slider
@@ -15,7 +15,7 @@ app.mount('/v1/', WSGIMiddleware(django_app.application))
 
 # os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "backend:cudaMallocAsync"
 
-model_name_or_path = "/home/ubuntu/llm_experiments/Yarn-Mistral-7B-128k-AWQ"
+# model_name_or_path = "/home/ubuntu/llm_experiments/Yarn-Mistral-7B-128k-AWQ"
 # model_name_or_path = "TheBloke/Yarn-Mistral-7B-128k-AWQ"
 # model_name_or_path = "berkeley-nest/Starling-LM-7B-alpha"
 
@@ -343,7 +343,7 @@ async def return_words(words):
         yield word
         time.sleep(0.1)
 
-from fastapi import FastAPI, JSONResponse
+from fastapi import FastAPI
 from pydantic import BaseModel
 
 
