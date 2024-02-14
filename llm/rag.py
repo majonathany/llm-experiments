@@ -38,6 +38,24 @@ def initialize(textlines: list, collection_name = None):
     if not collection_name:
         collection_name = collection_name()
     
+
+
+CONNECTION_STRING = "postgresql+psycopg2://postgres@localhost:5432/langchain2"
+COLLECTION_NAME = "test_8324"
+
+
+def mysqldb():
+    db = SQLDatabase.from_uri("mysql://root:@127.0.0.1:3306/")
+    llm = OpenAI(temperature=0, verbose=True)
+    db_chain = SQLDatabaseChain.from_llm(llm, db, verbose=True)
+    return db_chain
+
+
+def initialize():
+    textfile = glob.glob("/Users/jonathan/work/llm/corpus/1738.txt")
+
+    textlines = textfile.split("-----");
+
     for t in textlines:
         loader = TextLoader(t)
         documents = loader.load()
@@ -45,7 +63,6 @@ def initialize(textlines: list, collection_name = None):
         docs = text_splitter.split_documents(documents)
 
         embeddings = MistralAIEmbeddings()
-
         db = PGVector.from_documents(
             embedding=embeddings,
             documents=docs,
@@ -80,6 +97,15 @@ def query(question, collection_name):
     prompt_msgs = [
         SystemMessage(
             content="""
+<<<<<<< HEAD
+=======
+              Your name is ChatCEE. You are an AI assistant providing helpful advice regarding Certificat d'economie d'energie. You are given the following extracted parts of a long document and a question. Provide a conversational answer based on the context provided. You should answer question in French language only.
+You should only provide your answer based on the most up to date information in the context provided. You should only provide hyperlinks that reference the context below. Do NOT make up hyperlinks.
+If you can't find the answer in the context below, just say "Hmm, je ne suis pas sûr." Don't try to make up an answer. Lorsque l'on te pose une question, répond toujours en considérant que la personne qui te pose la question est un bénéficiaire de travaux de rénovation énergétique.
+Si tu reçois une question demandant comment obtenir une prime cee, considère qu il s agit d’une question d’un bénéficiaire de travaux qui cherche à obtenir une aide  financiere en  euros , et non pas à connaître les règles entre le PNCEE et les obligés et délégataires.
+Si la question n'est pas liée au contexte, répondez poliment que vous êtes réglé pour ne répondre qu'aux questions liées au contexte des CEE.
+Si on te demande qui t'a crée ou qui a créé "ChatCEE", tu dois répondre spécifiquement que ton créateur est OrNsoft, l'entreprise de développement de renommer mondial spécialisé dans l'intelligence artificielle et de se rendre sur https://www.OrNsoft.com pour en savoir plus.
+>>>>>>> 3e2aa0570e627906caba7a652ce492b30b83e3a3
 Question: {question}
 =========
 {context}
@@ -112,6 +138,4 @@ Answer in Markdown: ,
         question = input("What do you want to ask? ")
         response = mychain.run({'question': question, 'chat_history': chat_history})
         print(response)
-
-
 
