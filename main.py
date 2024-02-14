@@ -34,6 +34,15 @@ class SpecialTextIteratorStreamer(TextIteratorStreamer):
     filename = ""
 
 
+def print_number_of_trainable_model_parameters(model):
+    trainable_model_params = 0
+    all_model_params = 0
+    for _, param in model.named_parameters():
+        all_model_params += param.numel()
+        if param.requires_grad:
+            trainable_model_params += param.numel()
+    return f"trainable model parameters: {trainable_model_params}\nall model parameters: {all_model_params}\npercentage of trainable model parameters: {100 * trainable_model_params / all_model_params:.2f}%"
+
 
 async def generate_inference(filename,  temperature = None, top_p=None, top_k=None, max_new_tokens = None, do_sample = None, token_ratio = None, repetition_penalty=None, stream_message=None):
 
@@ -101,6 +110,16 @@ async def generate_inference(filename,  temperature = None, top_p=None, top_k=No
           max_new_tokens=max_new_tokens,  # Limit on token generation
           repetition_penalty=float(repetition_penalty),
           streamer=streamer)
+
+    text_generation_pipeline = pipeline(
+        model=model,
+        tokenizer=tokenizer,
+        task="text-generation",
+        temperature=0.2,
+        repetition_penalty=1.1,
+        return_full_text=True,
+        max_new_tokens=1000,
+    )
 
     print(kwargs, token_input)
     thread = Thread(target=model.generate, args=[token_input], kwargs=kwargs)
