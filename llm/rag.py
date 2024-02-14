@@ -1,4 +1,4 @@
-import glob
+import glob, logging
 import os
 import getpass
 
@@ -44,13 +44,6 @@ CONNECTION_STRING = "postgresql+psycopg2://postgres@localhost:5432/langchain2"
 COLLECTION_NAME = "test_8324"
 
 
-def mysqldb():
-    db = SQLDatabase.from_uri("mysql://root:@127.0.0.1:3306/")
-    llm = OpenAI(temperature=0, verbose=True)
-    db_chain = SQLDatabaseChain.from_llm(llm, db, verbose=True)
-    return db_chain
-
-
 def initialize():
     textfile = glob.glob("/Users/jonathan/work/llm/corpus/1738.txt")
 
@@ -70,6 +63,21 @@ def initialize():
             connection_string=CONNECTION_STRING,
             pre_delete_collection=True
         )
+
+def test_connection_to_db(collection_name):
+    embeddings = MistralAIEmbeddings()
+
+    try:
+        store = PGVector(
+            collection_name=collection_name,
+            connection_string=CONNECTION_STRING,
+            embedding_function=embeddings,
+        )
+
+        return True
+    except Exception as e:
+        logging.exception(e)
+    return False
 
 def query(question, collection_name):
     embeddings = MistralAIEmbeddings()

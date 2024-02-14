@@ -4,4 +4,4 @@ successful/*.txt
 interesting/*.txt
 output/**
 backend/__pycache__/*
-
+./backend/__pycache__/*

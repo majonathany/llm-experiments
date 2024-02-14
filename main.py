@@ -7,6 +7,7 @@ import chainlit as cl
 from chainlit.input_widget import Select, Switch, Slider
 from fastapi.middleware.wsgi import WSGIMiddleware
 from chainlit.server import app
+from transformers import pipeline
 
 import backend.wsgi as django_app
 
@@ -23,23 +24,17 @@ def on_server():
 
 if on_server():
     model_name_or_path = "/home/ubuntu/llm_experiments/Yarn-Mistral-7B-128k-AWQ"
-    # model_name_or_path = "TheBloke/Yarn-Mistral-7B-128k-AWQ"
-    # model_name_or_path = "berkeley-nest/Starling-LM-7B-alpha"
 
     # Load tokenizer
     tokenizer = AutoTokenizer.from_pretrained(model_name_or_path, trust_remote_code=False)
-    # Load model
     from awq import AutoAWQForCausalLM
 
-    model = AutoAWQForCausalLM.from_quantized(model_name_or_path, fuse_layers=True, trust_remote_code=False, safetensors=True)
-model_name_or_path = "/home/ubuntu/llm_experiments/Yarn-Mistral-7B-128k-AWQ"
-
-tokenizer = AutoTokenizer.from_pretrained(model_name_or_path, trust_remote_code=True)
-# Load model
-model = AutoAWQForCausalLM.from_quantized(model_name_or_path, trust_remote_code=True,
-                                          fuse_layers=True,
-                                          safetensors=True,
-                                          use_cache=False)
+    tokenizer = AutoTokenizer.from_pretrained(model_name_or_path, trust_remote_code=True)
+    # Load model
+    model = AutoAWQForCausalLM.from_quantized(model_name_or_path, trust_remote_code=True,
+                                              fuse_layers=True,
+                                              safetensors=True,
+                                              use_cache=False)
 
 app.mount('/v1/', WSGIMiddleware(django_app.application))
 
@@ -123,7 +118,7 @@ async def generate_inference(filename,  temperature = None, top_p=None, top_k=No
 
     streamer = SpecialTextIteratorStreamer(tokenizer, skip_prompt=True, skip_special_tokens=True)
 
-    if True:
+    if do_sample:
 
         kwargs = dict(
                   do_sample=True,  # Enabling stochastic mode
@@ -237,7 +232,6 @@ def get_settings():
         "do_sample": do_sample,
         "token_ratio": token_ratio,
         "repetition_penalty": repetition_penalty,
-        "do_sample": do_sample
     }
 
 @cl.on_chat_start
@@ -403,5 +397,21 @@ def hello(request: Request):
         result = json.dumps(request.body())
     return {"result": result}
 
+def test_postgres():
+    pass
 
+@app.post("/api/initialize")
+def hello(request: Request):
+    from llm.rag import query, initialize, test_connection_to_db
 
+    return True
+    if test_connection_to_db('hello'):
+        return test_connection_to_db('hello')
+        print(request.headers)
+        if on_server():
+            result = request.body()
+            if "pages" in result:
+                initialize(result['pages'])
+        else:
+            result = json.dumps(request.body())
+    return {"result": result}
