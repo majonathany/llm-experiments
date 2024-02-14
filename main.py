@@ -325,13 +325,6 @@ from asgiref.sync import sync_to_async
 
 @cl.on_message
 async def main(message: cl.Message):
-    global django_string
-
-    import django
-
-    django_string = User.objects.first().email
-
-    return await cl.Message(content=f"hi django is {django.__version__} {django_string}").send()
 
     # Your custom logic goes here...
 
