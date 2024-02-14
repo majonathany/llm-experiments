@@ -6,18 +6,23 @@ from awq import AutoAWQForCausalLM
 from transformers import AutoTokenizer, TextIteratorStreamer
 import chainlit as cl
 from chainlit.input_widget import Select, Switch, Slider
+from vllm import LLM, SamplingParams
+from torch.nn import DataParallel
 
-# os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "backend:cudaMallocAsync"
+from transformers import AutoTokenizer, AutoModelForCausalLM
+
+
 
 model_name_or_path = "/home/ubuntu/llm_experiments/Yarn-Mistral-7B-128k-AWQ"
-# model_name_or_path = "TheBloke/Yarn-Mistral-7B-128k-AWQ"
-# model_name_or_path = "berkeley-nest/Starling-LM-7B-alpha"
 
-# Load tokenizer
 tokenizer = AutoTokenizer.from_pretrained(model_name_or_path, trust_remote_code=True)
 # Load model
+model = AutoAWQForCausalLM.from_quantized(model_name_or_path, trust_remote_code=True,
+                                          fuse_layers=True,
+                                          safetensors=True,
+                                          use_cache=False)
 
-model = AutoAWQForCausalLM.from_quantized(model_name_or_path, fuse_layers=True, trust_remote_code=True, safetensors=True)
+app.mount('/v1/', WSGIMiddleware(django_app.application))
 
 
 class SpecialTextIteratorStreamer(TextIteratorStreamer):
@@ -55,6 +60,9 @@ async def generate_inference(filename,  temperature = None, top_p=None, top_k=No
     if not repetition_penalty:
         repetition_penalty = repetition_penalty_global
 
+    if not do_sample:
+        do_sample = do_sample_global
+
     prompt = ""
     context = open(f'/home/ubuntu/llm_experiments/input/{filename}', 'r').read()
 
@@ -76,9 +84,18 @@ async def generate_inference(filename,  temperature = None, top_p=None, top_k=No
 
     print(f"*** Running generate at {current_datetime} with params: repetition_penalty {repetition_penalty} temperature = {temperature}, top_p={top_p}, top_k={top_k}, max_new_tokens = {max_new_tokens}, do_sample = {do_sample}")
 
+    # new test on 4 gpus
+
+
+    # generation_output = model(token_input)
+    #
+    # return tokenizer.decode(generation_output, skip_special_tokens=True)
+
+    # new test on 4 gpus
+
     streamer = SpecialTextIteratorStreamer(tokenizer, skip_prompt=True, skip_special_tokens=True)
 
-    if do_sample:
+    if True:
 
         kwargs = dict(
                   do_sample=True,  # Enabling stochastic mode
@@ -94,6 +111,7 @@ async def generate_inference(filename,  temperature = None, top_p=None, top_k=No
           max_new_tokens=max_new_tokens,  # Limit on token generation
           repetition_penalty=repetition_penalty,
           streamer=streamer)
+
 
     thread = Thread(target=model.generate, args=[token_input], kwargs=kwargs)
 
