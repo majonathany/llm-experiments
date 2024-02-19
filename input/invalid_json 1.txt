@@ -1,0 +1,25 @@
+Please perform the following task which involves reading a snippet of incorrectly formatted JSON, and responding with correctly formatted JSON.
+
+The following was invalid JSON:
+
+```json
+{
+    "8307": "Non, Le tableau mentionné dans la section Plan de travaux proposés n'inclut pas une colonne nommée \"Ma Prime Renov' Copro\". Les colonnes mentionnées concernent différents postes d'intervention et les coûts associés, sans faire référence à Ma Prime Renov' Copro, 1.0",
+    "8308": "Non, Le tableau de la section Plan de travaux proposés ne mentionne pas explicitement un 'Optimal ACCEO', mais il décrit trois scénarios de travaux, y compris 'Optimal ACCEO', sans suggérer une structure de tableau avec cette spécificité, 1.0",
+    "8309": "Oui, Le document contient un paragraphe nommé Performances Maximales qui est listé dans la table des matières, bien qu'il ne soit pas visible dans les extraits fournis, 0.7",
+    "8312": "Non applicable, Il n'y a pas d'indication dans les extraits fournis qui mentionne la présence de bâtiments non visités ni de justification associée, 1.0",
+    "8314": "Oui, Le document contient toutes les sections listées comme en témoigne la table des matières détaillée au début du document, 1.0",
+    "8316": "Non, Toutes les préconisations de travaux mentionnées découlent d'anomalies identifiées lors de l'étude, comme le montre le rapport et les descriptions des solutions préconisées, 1.0"
+    "8318": "Non, Bien que des travaux de ravalement de façade soient préconisés, le coût total estimé pour 'Ravalement des façades' est de 109 000 euros TTC, sans référence à une estimation par mètre carré, 1.0",
+    "8319": "Non, Le document ne déclare pas explicitement l'invalidité des Diagnostics Techniques Amiante datant d'avant le 1er Juillet 2013. Il mentionne simplement les exigences concernant les travaux et l'amiante pour les immeubles de construction antérieure à cette date, 1.0",
+    "8322": "Non, Il n'y a pas d'erreurs d’orthographe, de syntaxe ou de grammaire évidentes dans le rapport, à part quelques éléments générés par l'extraction de texte du PDF, 1.0",
+    "8323": "Oui, La numérotation des pages suit une séquence continue sans discontinuités, allant de la page 2 à la page 51, 1.0",
+    "8325": "Oui, Le document contient une conclusion rédigée, qui résume les constats et les préconisations issues de l'étude menée sur la résidence Laetitia, 1.0",
+    "8326": "Oui, La conclusion du "Projet de Plan Pluriannuels de Travaux" inclut des sections qui énumèrent et détaillent les travaux recommandés, telles que l'amélioration de la ventilation, le remplacement de menuiseries, et l'installation de pompes à chaleur, 1.0",
+    "8346": "Non applicable, La colonne Ma Prime Renov' Copro n'est pas présente dans le tableau du plan de travaux proposés, donc il n'est pas possible d'évaluer les gains énergétiques dans cette colonne, 1.0",
+    "8347": "Non, Aucun bâtiment non visité n'est mentionné dans les extraits fournis du document, 1.0",
+    "8348": "Mickael TERROM, Le nom du Chef de projet selon l'extrait est "Mickael TERROM", 1.0"
+}
+```
+
+Please fix the JSON and reply with it below. It should be parseable by a JSON parser.

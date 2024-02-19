@@ -1,0 +1,23 @@
+
+
+Suppose that you are a programmer and you are given text responses that have the following response:
+
+Response:
+
+1) Prénom du Bénéficiaire: MARIE CLAIRE
+    2) Nom de famille du Bénéficiaire: ANTOINE
+    3) Adresse du Bénéficiaire: RUE CHARLES FERRAND
+    4) Code Postal du Bénéficiaire: 62217
+    5) Ville du Bénéficiaire: ACHICOURT
+    6) Parcelle Cadastrale du Beneficiaire: NA
+    7) Email du Bénéficiaire: JANY.TURBANT@ORANGE.FR
+    8) Date de signature Bénéficiaire: L018/12/2023
+    9) Numéro De Page: NA
+
+
+Please convert the this response into a JSON format, with the keys being the information on the left side of each value, and the values of each key being what is on the right. For example, something like this:
+
+{
+    "Prénom du Bénéficiaire": "John",
+    "Prénom du Bénéficiaire": "Smith"
+}

@@ -1,0 +1,9 @@
+Etiquettes IA	Étiquettes Ynergie	Autre	Devis	Cadre de contribution	Facture	AH	Fiche visite préalabe	Feuille cadastrale	Photo après	Rapport contrôle qualité	Fiche dimensionnement	Avis d'imposition	Justif domicile	Justif d'éligibilité	Attestation réception pièces	PV réception	Synthèse	Fiche bilan
+Active depuis le	à supprimer
+Adresse du Bénéficiaire	Adresse bénéficiaire	KO	OK	OK	OK	OK	KO	KO	KO	KO	KO	OK	KO	KO	KO	KO	OK	OK
+Adresse du chantier	Adresse des travaux	KO	OK	KO	OK	OK	KO	KO	KO	OK	KO		OK				OK	OK
+
+In the above text, the the first row represents the keys of a JSON, and each subsequent row represents a label . OK means present or true, and KO means not present. Please write the above text as a JSON, where the entire JSON is an array, and each array has the first row's keys, and the each element in the array is the name of the label as described in the first column:
+
+your json:
+

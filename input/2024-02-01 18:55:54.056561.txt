@@ -1,0 +1,71 @@
+You are a world class AI that is trying to take extract data from a set of documents. You will be provided a series of questions and return a series of labels, such that if you had the values to these labels, you would be able to answer all of the questions.
+
+The following is the name of the control: QUICK: BtoC Résidentiel Synerciel (Quickmode V2)
+
+The following is the list of documents: Autre, DEVIS, CADRE DE CONTRIBUTION, FACTURE, ATTESTATION SUR L'HONNEUR, FICHE DE RENSEIGNEMENTS VISITE TECHNIQUE, DOCUMENT GEOPORTAIL, NOTE DE DIMENSIONNEMENT, AVIS FISCALE
+
+The following is the question list:
+
+9728: Est-ce que le nom de famille du bénéficiaire client dans Autre est le même que dans le devis ?
+9729: Est-ce que le prénom du bénéficiaire client dans Autre est le même que dans le devis ?
+9730: Est-ce que l'adresse du bénéficiaire client dans Autre est le même que dans le devis ?
+9731: Est-ce que le code postal du bénéficiaire client dans Autre est le même que dans le devis ?
+9732: Est-ce que la ville du bénéficiaire client dans Autre est le même que dans le devis ?
+9733: Est-ce que le prénom du bénéficiaire client dans le DEVIS est présent ?
+9734: Est-ce que le nom de famille du bénéficiaire client dans le DEVIS est présent ?
+9735: Est-ce que l'adresse du bénéficiaire client dans le DEVIS est présent(e) ?
+9736: Est-ce que le code postal du bénéficiaire client dans le DEVIS est présent ?
+9737: Est-ce que la ville du bénéficiaire client dans le DEVIS est présent(e) ?
+9738: Est-ce que l'adresse des travaux dans le document DEVIS est présente ?
+9739: Est-ce que le code postal des travaux dans le document DEVIS est présent ?
+9740: Est-ce que la ville des travaux dans le document DEVIS est présente ?
+9741: Est-ce que la raison sociale du sous-traitant dans le document DEVIS est présente ?
+9742: Est-ce que le numéro SIRET du sous-traitant dans le document DEVIS est présent ?
+9743: Est-ce que la date de devis dans le DEVIS est présente ?
+9744: Est-ce que la date d'acceptation du devis dans le DEVIS est présente ?
+9745: Est-ce que la mention Bon pour accord dans le DEVIS est présente ?
+9746: Est-ce que la signature du bénéficiaire client dans le DEVIS est présente ?
+9747: Quel est le code d'opération de la fiche CEE standardisée dans le DEVIS ?
+9748: Est-ce que la RAI de l'obligé présente dans le document DEVIS est mentionné dans le contexte de la prime CEE ?
+9749: Est-ce que la date d'acceptation du devis dans le document DEVIS est supérieure ou égale à  la date d'édition du devis ?
+9750: Est-ce que le Code de l'opération dans la fiche CEE standardisée du document CADRE DE CONTRIBUTION est le même que celui du devis ?
+9751: Est-ce que le montant de la prime CEE dans le document CADRE DE CONTRIBUTION est égal à  celui du devis ?
+9752: Est-ce que le prénom du bénéficiaire client dans le document CADRE DE CONTRIBUTION est le même que celui du devis ?
+9753: Est-ce que le nom de famille du bénéficiaire client dans le document CADRE DE CONTRIBUTION est le même que celui du devis ?
+9754: Est-ce que l'adresse du bénéficiaire client dans le document CADRE DE CONTRIBUTION est la même que celle du devis ?
+9755: Est-ce que le code postal du bénéficiaire client dans le document CADRE DE CONTRIBUTION est le même que celui dans le devis ?
+9756: Est-ce que la ville du bénéficiaire client dans le document CADRE DE CONTRIBUTION est la même que celle dans le devis ?
+9757: Est-ce que l'option "une prime d'un montant de XXX Euros" avec le montant du CEE saisie dans le document CADRE DE CONTRIBUTION est présente ?
+9758: Est-ce que la signature et le cachet commercial de l'installateur dans le document CADRE DE CONTRIBUTION sont présents ?
+9759: Est-ce que le logo du mandataire dans le document CADRE DE CONTRIBUTION est présent ?
+9760: Est-ce que le logo de l'obligé dans le document CADRE DE CONTRIBUTION est présent ?
+9761: Est-ce que la date de signature de l'installateur dans le document CADRE DE CONTRIBUTION est antérieure ou égale à  la date d'acceptation du devis ?
+9762: Est-ce que le prénom du bénéficiaire client dans FACTURE est le même que dans le devis ?
+9763: Est-ce que le nom de famille du bénéficiaire client dans FACTURE est le même que dans le devis ?
+9764: Est-ce que l'adresse du bénéficiaire client dans FACTURE est le même que dans le devis ?
+9765: Est-ce que le code postal du bénéficiaire client dans FACTURE est le même que dans le devis ?
+9766: Est-ce que la ville du bénéficiaire client dans FACTURE est le même que dans le devis ?
+9767: Est-ce que l'adresse des travaux dans FACTURE est la même que dans le devis ?
+9768: Est-ce que le code postal des travaux dans FACTURE est le même que dans le devis ?
+9769: Est-ce que la ville des travaux dans FACTURE est la même que dans le devis ?
+9770: Est-ce que la raison sociale du sous-traitant dans FACTURE est la même que dans le devis ?
+
+The goal is to generate a list of labels such that each label refers to the same real entity and there are no duplicate entities that represent the same thing. For example, the goal is to avoid getting duplicates like "Beneficiary First Name" and "First Name of Beneficiary", which really mean the same thing, while still obtaining all of the individual labels.
+
+Note that if you come across Cadre A, Cadre B, Cadre C, or Cadre R1, those are actually part of the Attestation Sur L'Honneur.
+
+Please return a list of labels with the following format {labelName} ({doc1}, {doc2}, {doc3}, etc.) where {docN} is the name of the document the label is found in. Make sure both the labels and the document names are in French.
+
+For example:
+
+Montant Prime (Devis, Facture, Cadre du Contribution)
+L'adresse du bénéficiaire (Devis, Facture)
+
+Return the same format as the example for each of the questions in the list. Do not return anything else except the list itself.  Remember that if you come across Cadre A, Cadre B, Cadre C, or Cadre R1, those are actually part of the Attestation Sur L'Honneur so please choose that from the list if you see it.
+
+Please return the same format as the example for each of the questions in the list. The document names must come from the following list: Autre, DEVIS, CADRE DE CONTRIBUTION, FACTURE, ATTESTATION SUR L'HONNEUR, FICHE DE RENSEIGNEMENTS VISITE TECHNIQUE, DOCUMENT GEOPORTAIL, NOTE DE DIMENSIONNEMENT, AVIS FISCALE
+
+Make sure both the labels and the document names are in French.
+
+Your response:
+

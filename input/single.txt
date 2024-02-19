@@ -1,0 +1,20 @@
+I have a document related to energy savings titled 'Attestation Sur L'Honneur'. I need specific information extracted from this document. I am going to provide you a list of questions that need to be answered - then, I am going to provide to you the plain text that was extracted from a PDF that contained this information. Please analyze it and provide answers to the following questions based on the content of the plain text.
+
+
+Questions that need to be answered:
+
+What is the name of the document? (Nom du document)
+What is the Operation Code CEE mentioned in the document?
+Does the document state whether the household income is below the ceilings of Table A? (Les revenus de mon ménage sont-ils inférieurs aux plafonds du tableau A?)
+What is the Invoice Number mentioned? (Numéro de facture)
+What is the address of the worksite? (Adresse du chantier)
+What is the Cadastral Parcel number? (Parcelle Cadastrale)
+What is the Postal Code of the worksite? (Code Postal du chantier)
+What is the City of the worksite? (Ville du chantier)
+What is the Page Number of this information? (Numéro De Page)
+
+Plain Text: Please use the following extracted plain text to answer the previous questions:
+
+CERTIFICATS D'ECONOMIES D'ENERGIE Attestation sur l'honneur Document à compléter de façon lisible et de préférence en majuscules. Les champs précédés d'un astérisque (*) sont obligatoires Demandeur : ACE ENERGIE ACEENERGIE N°SIREN 848 595 336 A / BAR-TH-112 (v. A46.3): Mise en place d'un appareil indépendant de chauffage au bois. *Date d'engagement de l'opération (ex date d'acceptation du devis) : 28/11/2023 Date de preuve de réalisation de l'opération (ex: date de la facture): 18/12/2023 Référence de la facture : 2023-5388 *Pour les personnes morales, nom du site des travaux : *Adresse des travaux 0.RUECHARLES FERRAND Complément d'adresse: 000 / AV / 0237 *Code postal 62217 *Ville: ACHICOURT *Maison individuelle existante depuis plus de 2 ans à la date d'engagement de l'opération X OUI NON [ ] Caractéristiques de l'appareil indépendant de chauffage au bois : Si le combustible est sous une forme autre que des granulés : *Performances : [ ] l'efficacité énergétique saisonnière de l'équipement s'établit à: ; de plus, les émissions de particules sont inférieures ou égales à 40 mg/Nm3 les émissions de composés organiques gazeux (COG) sont inférieures ou égales à 120 mgC/Nm3: les émissions de monoxyde de carbone (CO) sont inférieures ou égales à 1 500 mg/Nm3 (soit 0,12 %) les émissions d'oxydes d'azote (NO,) sont inférieures ou égales à 200mg/Nm3 NBI : L'efficacité énergétique saisonnière d'un appareil fonctionnant au bois autre que sous forme de granulés est supérieure ou égale à 66 %. NB2: Les valeurs en concentration sont exprimées en mg/Nm³ à 13% d'O2. NE3 : Un appareil de chauffage au bois possédant le label Flamme verte est réputé satisfaire les conditions ci-dessus relatives aux émissions de polluants. Si le combustible est sous la forme de granulés *Performances : [ ] X l'efficacité énergétique saisonnière de l'équipement s'établit à 87% :de plus, les emissions de particules sont inférieures ou égales à 20 mg/Nm3 les émissions de composés organiques gazeux (COG) sont inférieures ou égales à 60 mgC/Nm3 les émissions de monoxyde de carbone (CO) sont inférieures ou égales à 300 mg/Nm3 (soit 0,02% ies émissions d'oxydes d'azote (NO,) sont inférieures ou égales à 200 mg/Nm3. NB3 L'efficacité énergétique saisonnière d'un appareil fonctionnant au bois sous forme de granulés est supérieure ou égale à 80% NB4 Les valeurs en concentration sont exprimées en mg/Nm3 à 13% d'02. NB5: Un appareil de chauffage au bois possédant le label Flamme verte est réputé satisfaire les conditions ci-dessus relatives aux émissions de polluants. Le rendement énergétique et les émissions de polluants sont mesurés selon les nonnes suivantes pour les poêles: norme NF EN 13240 ou NF EN 14785 ou NF EN 15250; pour les foyers fermés, inserts de cheminées intérieures norme NF EN 13229 pour les cuisinières utilisées comme mode de chauffage norme NF EN 12815 1/6 [ ] [ ] [ ] 
+
+Your Response:

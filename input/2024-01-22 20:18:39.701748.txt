@@ -1,0 +1,16 @@
+Labels                   Values
+------------------------|---------------
+
+Nom du document Certificat d'economie d'energie
+Operation Code CEE ENE_A_001
+Les revenus de mon ménage sont inférieur aux plafond du tableau A
+Numero de facture 2023-5388
+Adresse du chantier 0 Rue Charles Ferrand
+Parcelle cadastrale NA
+Code Postal du chantier 62217
+Ville du chantier Achicourt MAson
+Numero de page NA
+Please turn the above text into a JSON object, where the labels are the keys and the values are the values.
+
+Your json:
+

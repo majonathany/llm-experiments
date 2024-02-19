@@ -1,0 +1,26 @@
+Suppose that you are working for a firm that specializes in examining projects that general contractors have done, such as installing insulation, changing roofing, or improving heat retention. Suppose that the contractors are typically in France.
+
+Suppose you have been given a project to grade to determine if all the information inside the project is valid and correct. So you must examine all the documents presented by the contractor and determine if the project followed all policies correctly.
+
+You have a document related to energy savings titled 'Attestation Sur L'Honneur'. The section of the document is the Cadre A. It holds general information about the project that was performed, what materials were used, the location and the purpose.
+
+You need specific information extracted from this document.  I am going to provide to you the plain text that was extracted from a PDF. Then I am going to provide you a list of labels that you need to obtain the values of. Please analyze the text and provide values of the labels based on the content of the plain text.
+
+Plain Text:
+A / BAR-EN-102 (v.A39.2) : Mise en place d'un procédé d'isolation (complexe ou sur lossature) sur mur(s) en façade ou en pignon *Date d'engagement de l'opération (ex : date d'acceptation du devis) : .18/11/22 Date de preuve de réalisation de l'opération (ex : date de la facture) : *Date de la visite préalable du bâtiment où ont CU lieu les travaux : 06/10/22 *Date de début des travaux (pose de l'isolant) 29/09/23 Référence de la facture *Pour les personnes morales : nom du site des travaux ou nom de la copropriété : *Adresse des travaux : 130.RUEDOCTEUR ROUX Complément d'adresse : *Code postal : 29900 *Ville : CONCARNEAU *Bâtiment résidentiel existant depuis plus de 2 ans à la date d'engagement de l'opération : Oui Non [ ] [x] Caractéristiques de l'isolant posé en façade ou en pignon : *Surface d'isolant posé (m ² .106 *Résistance thermique : R (m ².K/W) : 4,35 A ne remplir que si la résistance thermique n'est pas mentionnée sur la preuve de réalisation de l'opération : *Épaisseur (mm) : 140 A ne remplir que si les marque et référence de l'isolant posé nc sont pas mentionnées sur la preuve de réalisation de l'opération *Marque(s) Référence(s) NBI : pour la mise en place d'une isolation thermique des murs, sa résistance thermique R doit être > 3,7 m².K/W. NB2 : La résistance thermique de l'isolation existante n'est pas. le cas échéant, prise en compte pour la détermination de la résistance thermique ci-dessus. NB3 : la résistance thermique est évaluée selon la norme NF EN 12664. la norme NF EN 12667 ou la norme NF EN 12939 pour les isolants non réfléchissants et selon la norme NF EN 16012+A. pour les isolants réfléchissants. La résistance thermique est établie conformément à l'annexe 7 à l'arrêté du 22 décembre 2014 définissant les opérations standardisées d'économies d'énergie. NB4 : dans le cas d'une pose superposée de plusieurs isolants. indiquer les marques et références de chacun des isolants posés ainsi que le R global et pour la surface d'isolant posée, la surface résultant de la superposition des isolants. Le professionnel ayant réalisé l'opération est titulaire d'un signe de qualité répondant aux mêmes exigences que celles prévues à l'article 2 du décret n° 2014-812 du 16 juillet 2014 pris pour l'application du second alinéa du 2 de l'article 200 quater du code général des impôts et du dernier alinéa du 2 du I de l'article 244 quater U du code général des impôts et des textes pris pour son application. Ce signe de qualité correspond à des travaux relevant du 11° ou du 12° du I de l'article en du décret précité. Identité du professionnel titulaire du signe de qualité ayant réalisé l'opération, s'il n'est pas le signataire de cette attestation (sous-traitant par exemple) : *Nom *Prénom *Raison sociale : *No SIRET : 2/5 [ ] [x] 
+
+Labels:
+
+Nom du document
+Operation Code CEE
+Les revenus de mon ménage sont inférieurs aux plafonds du tableau A
+Numéro de facture
+Adresse du chantier
+Parcelle Cadastrale
+Code Postal du chantier
+Ville du chantier
+Numéro De Page
+Please provide the values to the labels if they are present in the plain text. If not provided please write NA.
+
+The following are the labels and their values:
+

@@ -1,0 +1,1 @@
+I am trying to figure out how to deploy my LLM on AWS. But I feel like every time I try, I get an hour that says I've run out of GPU memory. Even though I try with GPU instances, and then eventually with 96GB of GPU memory, I still can't run them. What should i do?

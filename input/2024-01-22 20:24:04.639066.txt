@@ -1,0 +1,16 @@
+Nom du document = Certificat d’economie d’energie
+Operation Code CEE = BAR-TH-112
+Les revenus de mon ménage sont inférieur aux plafond du tableau A = Non
+Numero de facture = 2023-5388
+Adresse du chantier = 0 Rue Charles Ferrand
+Parcelle cadastrale = 000
+Code postal du chantier = 62217
+Ville du chantier = Achicourt
+Numero de page = 1
+
+
+
+Please turn the above text into a JSON object, where the labels are the keys and the values are the values.
+
+Your json:
+

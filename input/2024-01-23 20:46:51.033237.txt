@@ -1,0 +1,3 @@
+write me a line of django to get the 10 most recent entries of a django model called Operation.
+
+Your line:

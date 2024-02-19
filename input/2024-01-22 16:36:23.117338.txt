@@ -1,0 +1,8 @@
+Etiquettes IA	Étiquettes Ynergie	Autre	Devis	Cadre de contribution	Facture	AH	Fiche visite préalabe	Feuille cadastrale	Photo après	Rapport contrôle qualité	Fiche dimensionnement	Avis d'imposition	Justif domicile	Justif d'éligibilité	Attestation réception pièces	PV réception	Synthèse	Fiche bilan
+Active depuis le	à supprimer
+Adresse du Bénéficiaire	Adresse bénéficiaire	KO	OK	OK	OK	OK	KO	KO	KO	KO	KO	OK	KO	KO	KO	KO	OK	OK
+Adresse du chantier	Adresse des travaux	KO	OK	KO	OK	OK	KO	KO	KO	OK	KO		OK				OK	OK
+
+Please write the above text as a JSON:
+
+your json:

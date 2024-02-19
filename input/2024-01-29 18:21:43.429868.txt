@@ -1,0 +1,17 @@
+    Suppose that you are working for a firm that specializes in examining projects that general contractors have done, such as installing insulation, changing roofing, or improving heat retention. Suppose that the contractors are typically in France.
+
+Suppose you have been given a project to grade to determine if all the information inside the project is valid and correct. So you must examine all the documents presented by the contractor and determine if the project followed all policies correctly.
+
+You have a document related to energy savings titled 'Attestation Sur L'Honneur'. The section of the document is the Cadre A. It holds general information about the project that was performed, what materials were used, the location and the purpose.
+
+You are performing the first step of the analysis, which involves rewriting the plain text so that the information extraction can be much higher in quality. Please take the plain text and reassemble so that it there are clearer line breaks in the text and the text is more readable. Do not add new text or remove or add words that did not previously exist in the text.
+
+Plain Text:
+
+SAS OUEST ENERGIE Devis ZA DE KERAMPAOU KERNEVEZ ROUSSICA 29140 MELGVEN ouesténergie Tél 0298573350 Fax Site web : www.ouest-energie.bzh Email : contact@ouest-energie.eu Adresse Livraison/Chantier SCI TINAE 142 route du Lendu 1 chemin des Salamandres 29000 QUIMPER 29930 PONT AVEN Commercial : RICHE Mathias Tél : Numéro Date Code client Date de validité Tél. portable : 06 58 21 39 31 Email : saloupierre@sfr.fr DE16028237 08/12/2023 TIN001 07/01/2024 Description Qté Unité P.U. HT Montant HT TVA Mise en place d'une isolation thermique en comble : Zone climatique H2. Date de visite technique : 07/12/2023 NOM SALOU PRENOM :PIERRE YVES FONCTION : GERANT SIRET : 981 992 720 000 12 50,00 M2 32,00 1 600,00 5,50 ISOLATION DU PLAFOND DE COMBLES AMENAGES Soufflage de laine de verre ISOLENE 4 ISOVER Travaux éligibles aux CEE BAR-EN-101 Densité +/- 13 kg/m3 Epaisseur 330 mm Résistance thermique R =7 m² k/w ACERMI n° 05/D/018/404 EN 14064-1 : 2010 Cadrage et isolation de la trappe Pas de pose de pare vapeur ecart au feu 2,00 U 60,00 120,00 5,50 CADRAGE DE TRAPPE EN OSB 50,00 M2 8,00 400.00 5,50 Evacuation de laine 21,00 ML 10,00 210,00 5,50 Déflecteur Nombre de personnes : [ ] 2 Chauffage elec Référence cadastrale : 000 OF 1178 Date prévisionnelle des travaux : FEVRIER 24 RGE artisan Siret 43896553500042 - APE 4329A N° TVA intracom : FR76438965535 Capital : 7 630,00 € 1 sur 2 [ ]
+
+
+
+Newly, Organized and Rerranged Plain Text:
+
+

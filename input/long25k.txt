@@ -1,0 +1,1749 @@
+You are an AI programmed to compare two or more documents. Using the provided extracts from a series of documents, please answer the subsequent questions. Your answers must be based solely on information from the Projet de Plan Pluriannuel de Travaux and any other referenced documents. If a UUID is provided, it serves as image-based evidence and should be included in your explanation. ONLY_IF_RELEVANT: Disregard pages that are not pertinent to a given question.
+
+When identifying key-value pairs such as 'Beneficiary Name,' adhere to the following rules:
+1. For the Documents with 2 pages: The value on the first page is conclusive. Your justification should exclusively mention the first-page value. Do not reference or cite the second page under any circumstances.
+2. If there are three or more pages, use the value that appears most frequently, provided it appears on more than 50% of the total pages.
+3. Implement a confidence scoring system for the extracted values. A higher frequency of a particular value should result in a higher confidence score.
+4. FLAG_FOR_REVIEW: If there is no clear majority or significant contradictions exist, flag the document for manual review.
+
+Provide a confidence score with each response to indicate the estimated reliability of the answer, based on the document's content alignment with the query, completeness of the information, consistency with known data formats, and the absence of contradictory information within the document.
+
+The entire response should be VALID JSON.
+
+List of Questions:
+Document Name: Projet de Plan Pluriannuel de Travaux
+
+Question List:
+8307: Dans le document il y a une section nommée Plan de travaux proposés,  il y a un tableau avec des Préconisations mises en œuvre, est-ce que ce tableau a une colonne nommée "Ma Prime Renov' Copro" ? - answer can be Oui, Non
+8308: Dans le tableau de la section Plan de travaux proposés, y a-t-il une colonne "Optimal ACCEO" ? - answer can be Oui, Non, Non applicable
+8309: Le document contient-il un paragraphe nommé Performances Maximales ? - answer can be Oui, Non
+8312: Si il est indiqué des bâtiments qui sont non visités dans le document, est-ce justifié ? - answer can be Oui, Non, Non applicable
+8314: Toutes les parties suivantes sont-elles présentes dans le rapport : Synthèse du PPPT, Description des espaces extérieurs, Les façades, Description des menuiseries, Toiture, Planchers bas, Parties communes, Luminaires, installations climatiques et Ventilation. - answer can be Oui, Non
+8316: Dans le document il devrait avoir des préconisations de travaux pour chaque  anomalie identifiées, y a-t-il des préconisations qui ne sont pas liées à des anomalies ? - answer can be Oui, Non, Non applicable
+8318: Dans les cas où des travaux ravalement de façade sont préconisés dans le document , il devrait aussi y avoir le total estimé,  est-ce que ce coût total estimé atteint ou dépasse 200€ hors taxes par mètre carré ? - answer can be Oui, Non, Non applicable
+8319: Est-il indique explicitement dans le dcoument que les Diagnostics Techniques Amiante datant d'avant le 1er Juillet 2013 sont déclarés invalides du fait de leur ancienneté ? - answer can be Oui, Non, Non applicable
+8322: Y a-t-il des fautes d’orthographes, de syntaxe ou de grammaire dans le rapport ? - answer can be Oui, Non
+8323: La numérotation des pages est-elle correcte ? les chiffres se suivent ils bien sans discontinuer ? - answer can be Oui, Non
+8325: Le document contient-il une conclusion rédigée ? - answer can be Oui, Non
+8326: La conclusion du Projet de Plan Pluriannuels de Travaux inclut-elle des sections spécifiques qui énumèrent et détaillent les travaux recommandés ? - answer can be Oui, Non, Non applicable
+8346: Dans la section nommée Plans de travaux proposés, il y a un tableau nommé Évaluation énergétique après travaux ,est-ce que les gains énergétiques saisis dans la colonne Ma Prime Renov' Copro sont supérieurs a 34% pour ? - answer can be Oui, Non, Non applicable
+8347: Est-il mentionné dans le document, des bâtiments qui sont non visités ? - answer can be Oui, Non
+8348: Quel est le nom du Chef de projet ? - answer can be ANY
+
+
+Le document semble être le début d'un rapport formel rédigé par l'entreprise ACCEO Énergie concernant un projet de travaux. Le texte original est continu et sans mise en forme ; ci-dessous, vous trouverez une version reformattée de celui-ci. Notez que les crochets [ ] semblent indiquer des éléments manquants ou censurés dans le texte d'origine. La reformulation est basée sur les conventions standards pour ce type de documents :
+
+---
+
+ACCEO Énergie
+Projet de Plan Pluriannuel de Travaux n° 2022-013-115
+
+CITYA IMMOBILIER VICTOR
+Date de rédaction : 16 mai 2023
+
+Chef de projet : Mickael TERROM
+Ingénieur thermicien : Lise HAIE
+
+Résidence Laetitia
+2 Avenue de la Dépêche
+38-40-42 Avenue Passerieu
+31000 TOULOUSE
+
+Version : 1.1
+
+Contact ACCEO Toulouse:
+244, Route de Seysses - Bât. 3
+31100 TOULOUSE
+Tél : 05 67 70 10 01
+
+Rejoignez-nous sur www.acceo.eu et créez votre espace membre
+
+---
+
+Note : Les informations des parenthèses carrées ont été laissées telles quelles, car leur contenu exact est inconnu. Dans un document réel, ces informations devraient être complétées ou supprimées selon le contexte. Si le contenu censuré était connu, il pourrait être inclus pour compléter la mise en page correctement.
+
+----------------------------------------------------------------
+
+Voici le texte extrait du PDF reformaté pour une meilleure lisibilité :
+
+---
+
+**Projet de plan pluriannuel de travaux**  
+**ACCEO Energie**  
+**Sommaire**
+
+I. **PREAMBULE**  
+5 1. Présentation du contexte et objectifs  
+5 2. Présentation du projet  
+6 3. Equipe dédiée à votre projet  
+
+II. **EXAMEN DE L'EXISTANT**  
+7 1. Description générale  
+7 1.1. Présentation du site  
+7 1.2. Environnement du site  
+8 1.3. Synthèse des documents fournis  
+8 1.4. Validité des documents  
+9 2. Etat des lieux  
+10 2.1. Description du bâti  
+21 2.2. Description des espaces intérieurs  
+33 2.3. Description des installations climatiques  
+33 3. Description des équipements  
+33 3.1. Ventilation  
+
+III. **ANALYSE ENERGETIQUE DE LA SITUATION ACTUELLE DU SITE**  
+35 1. Niveaux de Consommations énergétique et Gaz à effet de serre conventionnels  
+
+IV. **PROPOSITIONS D'AMELIORATIONS**  
+37 1. Précision sur les calculs des préconisations  
+38 2. Synthèse des propositions d'amélioration  
+
+V. **PLANS DE TRAVAUX PLURIANNUELS**  
+40 1. Plan pluriannuel de travaux "Pérennité Patrimoniale"  
+41 1.1. Détail des solutions retenues  
+41 1.2. Calculs réglementaires  
+42 2. Plan pluriannuel de travaux "Optimal ACCEO"  
+42 2.1. Détail des solutions retenues  
+42 2.2. Calculs réglementaires  
+43 3. Plan pluriannuel de travaux "Investissements supérieurs"  
+43 3.1. Détail des solutions retenues  
+43 3.2. Calculs réglementaires  
+44 4. Récapitulatif des différents scénarios  
+
+VI. **CONCLUSION**  
+45  
+
+VII. **ABREVIATIONS ET DEFINITIONS**  
+47  
+
+**CITYA IMMOBILIER VICTOR HUGO**  
+Résidence Laetitia - Dossier 2022-013-115  
+Page 2 sur 51 
+
+--- 
+
+Ce formatage précise les titres de sections avec une notation en gras et ordonne l'information en une liste pour chaque section et sous-section, avec des sous-points pour les détails. Il rend la structure du document claire et facile à suivre.
+
+----------------------------------------------------------------
+
+Projet de plan pluriannuel de travaux ACCEO Energie
+
+---
+
+**Synthèse du PPPT**
+
+Le Projet de Plan Pluriannuel de Travaux (PPPT) réalisé sur le site Laetitia a permis de dresser un état des lieux technique et énergétique du site. Ci-dessous une synthèse des résultats et de nos conclusions. L'ensemble de notre étude est détaillé dans la partie "rapport PPPT complet" de notre rapport.
+
+**Le site : Laetitia**
+- Nombre de bâtiments : 1
+- Classification : Logements
+- Nombre de logements : 57
+- Volume total (m³) : 9 353
+- Classification énergétique initiale du bâtiment Laetitia : D
+
+**Etat de validité des documents réglementaires**
+Le DTA nous a été transmis. Il n'a pas été repéré de matériaux contenant de l'amiante.
+
+---
+
+**Évaluation technique &amp; énergétique des ouvrages**
+
+Pour chaque grande catégorie d'ouvrage, une note technique et une note énergétique ont été établies sur une échelle de 0 (Insuffisant), 1 (Moyen), 2 (Bon). Ces notes sont basées sur le nombre d'anomalies relevées lors de notre étude, sur la performance énergétique des éléments et sur l'appréciation de notre Expert par rapport aux règles de l'art en vigueur.
+
+- Façades : [Note Technique] [Note Énergétique]
+- Espaces extérieurs : [Note Technique] [Note Énergétique]
+- Menuiseries : [Note Technique] [Note Énergétique]
+- Transports Verticaux : [Note Technique] [Note Énergétique]
+- Toiture : [Note Technique] [Note Énergétique]
+- Ventilation : [Note Technique] [Note Énergétique]
+- Plancher bas : [Note Technique] [Note Énergétique]
+- Installations climatiques : [Note Technique] [Note Énergétique]
+- Parties communes ECS : [Note Technique] [Note Énergétique]
+
+*États Techniques et Énergétiques* :
+- Insuffisant
+- Moyen
+- Bon
+
+---
+
+**CITYA IMMOBILIER VICTOR HUGO**
+Résidence Laetitia - Dossier 2022-013-115
+Page 3 sur 51
+
+---
+
+[Les notes spécifiques dans chaque catégorie n'ont pas été incluses dans l'extraction de texte fournie et devraient être recherchées dans le rapport complet.]
+
+----------------------------------------------------------------
+
+Projet de plan pluriannuel de travaux ACCEO Energie
+
+Plans de travaux proposés :
+Lors de notre étude, pour chaque désordre et pour chaque faiblesse énergétique identifiée, une préconisation a été élaborée par notre expert. Chaque préconisation a été priorisée, chiffrée, mesurée énergétiquement et évaluée pour vous proposer plusieurs plans de travaux à mettre en œuvre sur les 10 prochaines années.
+
+1. Plan "Pérennité patrimoniale" :
+   - Correspond uniquement aux travaux architecturaux à mettre en œuvre pour assurer la pérennité du site.
+
+2. Plan "MaPrimeRenov' Copro" :
+   - Correspond aux travaux d'amélioration à réaliser pour l'embellissement général du site ainsi qu'un bouquet de travaux énergétiques plus complet.
+   - Permet de réaliser plus de 35 % d'économies d'énergies et ainsi être éligible à l'aide MaPrimeRénov'.
+
+3. Plan "Investissements supérieurs" :
+   - Reprend l'ensemble des travaux architecturaux et énergétiques à réaliser pour cette résidence.
+   - Ce plan de travaux permet également l'atteinte du seuil d'éligibilité à MaPrimeRénov'.
+
+Ci-dessous, les plans de travaux élaborés avec les travaux à réaliser, les coûts à engager priorisés sur les 10 prochaines années et la performance énergétique après travaux sur l'échelle DPE 3CL 2021.
+
+- Pérennité Patrimoniale
+- Investissements Supérieurs
+- Préconisations mises en œuvre Optimal ACCEO
+
+Travaux :
+- Façades (reprises ponctuelles) : 3 500 €
+- Balcons : 44 800 €
+- Isolation thermique du plancher bas : 4 200 €
+- Isolation thermique par l'extérieur (ITE) : 257 000 €
+- Mise en place d'une VMC plus performante : 12 540 €
+- Pompes à chaleur pour le chauffage : 240 540 €
+- Pompes à chaleur pour l'ECS : 180 405 €
+
+Investissement travaux (€ HT) :
+- [Pérennité Patrimoniale] : 48 300 €
+- [Investissements Supérieurs] : 318 540 €
+- [Optimal ACCEO] : 739 485 €
+
+Investissement travaux (€ TTC) :
+- [Pérennité Patrimoniale] : 57 960 €
+- [Investissements Supérieurs] : 343 120 €
+- [Optimal ACCEO] : 787 220 €
+
+Évaluation énergétique après travaux :
+- Gain énergétique conventionnelle après travaux : Bâtiment -21% (Pérennité Patrimoniale) ; -80% (Investissements Supérieurs)
+- Étiquette énergétique après travaux : Bâtiment Laetitia D (Pérennité Patrimoniale); A (Investissements Supérieurs)
+
+Conclusion de votre expert ACCEO :
+Le projet de plan pluriannuel de travaux réalisé sur la résidence Laetitia a permis d'identifier les principaux postes de déperditions énergétiques des bâtiments et de proposer des travaux qui permettraient de réduire les consommations du site. Voici les travaux que nous vous conseillons : isolation du plancher bas, isolation des murs, mise en place d'une ventilation mécanique performante.
+
+CITYA IMMOBILIER VICTOR HUGO
+Résidence Laetitia
+Dossier 2022-013-115
+Page 4 sur 51
+[...] [Continuation du document omise...]
+
+----------------------------------------------------------------
+
+Projet de Plan Pluriannuel de Travaux (PPPT)
+CCEO Energie
+Rapport PPPT complet
+
+I. Préambule
+
+1. Présentation du contexte et objectifs
+Nous avons été missionnés par CITYA IMMOBILIER VICTOR HUGO pour réaliser un projet de Plan Pluriannuel de Travaux (PPPT) du site. Dans le but de garantir des résultats pertinents, en conformité avec la loi n° 2021-1104 du 22 août 2021 pour la lutte contre le dérèglement climatique et le renforcement de la résilience face à ses effets, ACCEO Energie effectuera une analyse technique et énergétique des bâtiments via des calculs DPE 3CL.
+
+Nos objectifs pour cette étude sont :
+- Apporter au maître d'ouvrage un outil d'aide à la décision,
+- Analyser l'état apparent des parties communes et des équipements communs,
+- Estimer le coût des travaux et leur hiérarchisation, nécessaire à la bonne conservation des immeubles sur les 10 prochaines années,
+- Estimer le niveau de performance énergétique des immeubles et des travaux énergétiques préconisés,
+- Proposer des plans de travaux pluriannuels cohérents avec les besoins et contraintes du site.
+
+2. Présentation du projet
+
+Identification du site:
+- Nom du site: Laetitia
+- Code postal: 31000
+- Adresse: 2 Avenue de la Dépêche
+- Ville: TOULOUSE
+- 38-40-42 Avenue Passerieu
+- Nombre de locaux techniques: 1
+- Nombre de bâtiments: 0 (Chaufferie)
+- Nombre de locaux: 0 (Sous-station)
+- Nombre de logements: 57
+- Nombre de commerces: 0
+
+Identification du maître d'ouvrage:
+- Nom: Citya Immobilier
+- Activité, objet social: Administration d'immeubles et autres biens immobiliers
+- Forme juridique: Société à responsabilité limitée
+- Code APE: 6832A
+- Numéro SIRET: 40198174100010
+- Adresse: 30 Boulevard de Strasbourg
+- Code postal: 31015
+- Ville: TOULOUSE
+- Contact responsable: Mme Cécile GENY
+- Téléphone: 05.61.12.58.38
+- Email: CGENY@citya.com
+- Fonction: Responsable logistique immobilier
+- Affiliation: CITYA IMMOBILIER VICTOR HUGO
+- Résidence: Laetitia 
+- Dossier: 2022-013-115
+- Page: 5 sur 51
+
+----------------------------------------------------------------
+
+Voici le texte reformaté pour une meilleure lisibilité :
+
+---
+
+**Projet de plan pluriannuel de travaux - ACCEO Energie**
+
+**Informations obtenues :**
+- Plan de circuits hydrauliques
+- Plans de niveaux
+- Plan de coupe
+- Factures énergétiques :
+  - Factures gaz
+  - Factures fioul
+  - Consommations électriques
+  - Factures réseau de chaleur
+- Consommations eau :
+  - Eau froide
+  - Eau chaude
+
+**3. Équipe dédiée à votre projet**
+
+Dans le cadre de votre projet et pour respecter l'ensemble des exigences réglementaires, une équipe dédiée et qualifiée a été mise en place. L'équipe dédiée à votre projet est située à l'agence ACCEO Toulouse et est composée de :
+
+- **Directeur d'Agence :** Olivier MENOTTI
+- **Ingénieur Conseil :** Emilie VALLEYE
+- **Directeur technique :** Mickael TERROM
+- **Ingénieur Bâtiment :** Lise HAIE
+- **Architecte :** Bruno DE OLIVEIRA
+- **Assistante administrative :** Audrey BOEM
+
+**ACCEO Toulouse :**
+244, Route de Seysses - Bât. 3
+31100 TOULOUSE
+Tél: 05 67 70 10 01
+
+**CITYA IMMOBILIER VICTOR HUGO**
+Résidence Laetitia
+Dossier 2022-013-115
+Page 6 sur 51
+
+---
+
+----------------------------------------------------------------
+
+Voici le texte reformaté pour une meilleure lisibilité :
+
+---
+
+**Projet de plan pluriannuel de travaux ACCEO Energie**
+
+**II. Examen de l'existant**
+
+**1. Description générale**
+
+**1.1. Présentation du site**
+
+**Bâtiment Laetitia**
+
+- Classification du bâtiment : Logements
+- Nombre de logements : 57
+- Hauteur moyenne sous plafond (m) : 2,5
+- Surface de plancher (m²) : 1 184
+- Année de livraison : 1988
+- Nombre de blocs : 4
+- Volume total (m³) : 9353
+- Classification énergétique actuelle : D
+
+**Typologie et surface des logements du bâtiment Laetitia**
+
+| Type de lot chauffé | Nombre | Surface (m²) |
+|---|---|---|
+| T2 duplex | 2 | 41 |
+| T1 bis | 31 | 37 |
+| T1 duplex | 2 | 35 |
+| T1 | 22 | 34 |
+| Total | 57 | 2 000 |
+
+**1.2. Environnement du site**
+
+L'environnement du site est de type urbain dense. Certains bâtiments situés en face de la résidence peuvent projeter leur ombre sur celle-ci à certains moments de la journée.
+
+**Vue satellite du site** avec visualisation de la résidence et de ses masques solaires.
+
+*CITYA IMMOBILIER VICTOR HUGO*
+
+* *Résidence Laetitia - Dossier 2022-013-115*
+* *Page 7 sur 51*
+
+[Informations manquantes ou non pertinentes pour le reformatage ont été indiquées par [...] si nécessaire.]
+
+---
+
+----------------------------------------------------------------
+
+Voici le texte extrait du PDF reformaté pour une meilleure lisibilité :
+
+---
+
+**Projet de plan pluriannuel de travaux ACCEO Energie**
+
+**1.3. Synthèse des documents fournis**
+
+- **Documents utiles fournis** : *Présence* / *Absence* / *Non concerné*
+  - Diagnostic Technique amiante pour les copropriétés dont le permis de construire a été déposé avant le 1er juillet 1997
+  - Contrôle technique ascenseur
+  - Audit Energétique
+  - Diagnostic de Performance Energétique (DPE)
+
+**1.4. Validité des documents**
+
+Le DTA (Dossier Technique Amiante) nous a été transmis. Il n'a pas été repéré de matériaux contenant de l'amiante.
+
+CITYA IMMOBILIER VICTOR HUGO
+
+Résidence Laetitia - Dossier 2022-013-115
+
+Page 8 sur 51
+
+---
+
+----------------------------------------------------------------
+
+Projet de plan pluriannuel de travaux
+ACCEO Energie
+
+2. Etat des lieux
+
+Cette phase d'état des lieux a pour objectif de vérifier l'état technique et énergétique des ouvrages. En fonction des pathologies identifiées, un certain nombre de travaux seront proposés. A ce titre, les travaux seront priorisés selon trois niveaux : 
+
+1. **Travaux prioritaires**
+   Les travaux prioritaires relèvent de désordres qui nécessitent le remplacement des ouvrages et des équipements arrivés à un état d'usure limite, de dégradation généralisée ou rendus obligatoires par la réglementation. Ces désordres peuvent générer un risque pour les usagers, résidents et intervenants. À titre d'exemple, cela concernerait l'affaissement de fondations ou des garde-corps manquants, etc. Ce type de travaux est à traiter dans les plus brefs délais.
+
+2. **Travaux préventifs**
+   Les travaux préventifs ont pour but de garantir la pérennité du bâtiment et consistent en des interventions courantes et/ou périodiques sur les ouvrages et équipements. Ils seront principalement préconisés afin de résoudre des pathologies légères et pour éviter une dégradation progressive de l'ouvrage ou des équipements. À titre d'exemple, un problème de fissures peut provoquer des infiltrations puis la rouille des fers bétons qui provoqueront des éclats sur les façades du bâtiment. Ces travaux seront à réaliser dans un second temps après les travaux prioritaires.
+
+3. **Travaux d'amélioration**
+   Les travaux d'améliorations et d'embellissement ont pour objectif d'améliorer l'image du site et, au-delà de rendre le site plus agréable à vivre, ils auront également un impact sur la valeur patrimoniale de l'immeuble lors d'éventuelles reventes.
+
+L'état énergétique, de conservation et de fonctionnement sera noté grâce à deux indicateurs complémentaires :
+- **L'Etat Technique** :
+  - Bon
+  - Moyen
+  - Mauvais
+  - Très Mauvais/Hors Service
+
+- **L'Etat énergétique** :
+  - Bon
+  - Moyen
+  - Mauvais
+
+L'ensemble des pictogrammes présentés ci-dessous vous permettront de comprendre les analyses réalisées durant notre mission :
+- État technique : 
+  - Bon
+  - Moyen
+  - Mauvais
+  - Très Mauvais ou Hors Service
+- Critère de priorité : 
+  - 1 Prioritaire
+  - 2 Préventif
+  - 3 Amélioration
+- État énergétique : 
+  - Bon
+  - Moyen
+  - Mauvais
+
+CITYA IMMOBILIER VICTOR HUGO
+Résidence Laetitia
+Dossier 2022-013-115
+Page 9 sur 51
+
+[...]
+
+(Note: Les zones marquées par "[ ]" indiquent où le texte pouvait être tronqué ou nécessiter des informations supplémentaires qui auraient pu être présentes dans le document original non inclus ici.)
+
+----------------------------------------------------------------
+
+Le texte extrait de la page PDF semble être un rapport technique décrivant les caractéristiques d’une résidence et l’état de ses éléments structuraux. Voici le texte reformulé pour une meilleure clarté :
+
+---
+
+**Projet de plan pluriannuel de travaux ACCEO Energie**
+
+**2.1. Description du bâti**
+
+La résidence a été construite à la fin des années 1980, donc après la première réglementation thermique française. Le bâtiment dispose donc d'un niveau d'isolation globale minimum.
+
+**Les façades**
+- Les murs des façades et pignons sont en brique avec une faible isolation thermique d'origine.
+
+**Caractéristiques générales de la façade**
+- Orientation : [À compléter]
+- Nature de l'élément porteur : Briques pleines 21,5cm
+- Surface : 395 m²
+- Profondeur balcons/terrasses : [À compléter]
+- Etat des lieux énergétiques de la façade : [À compléter]
+- Epaisseur de l'isolant : 3 cm
+- Etat énergétique : [À compléter]
+- Etat technique de la façade : [À compléter]
+
+**Problèmes techniques identifiés**
+1. Murs
+   - Enduit lisse, pathologie : Fissures, priorité : 3
+   - Enduit lisse, pathologie : Éclats de béton, priorité : 3
+2. Balcon/Terrasse
+   - Matériau : Béton, problèmes de structure : Stagnation d'eau, priorité : 2
+   - Matériau : Béton, problèmes d'étanchéité des balcons, priorité : 2
+
+**CITYA IMMOBILIER VICTOR HUGO**
+Résidence Laetitia - Dossier 2022-013-115
+Page 10 sur 51
+
+---
+
+**Note :** J'ai reformaté le texte pour une structure plus claire, en organisant l'information en sections et en listes. Les parties comme "[ ]" semblent suggérer qu'il y avait des cases ou des champs à remplir dans le document original ou des éléments graphiques qui ne sont pas traduits dans le texte brut extrait. Je les ai omis ou remplacés par "[À compléter]" pour indiquer que des informations supplémentaires sont nécessaires à cet endroit.
+
+----------------------------------------------------------------
+
+Voici le texte extrait du PDF reformaté pour une meilleure lisibilité :
+
+---
+
+**Projet de plan pluriannuel de travaux ACCEO Energie**
+
+**Balcon/Terrasse &gt; Béton**
+- [ ] Peinture post travaux
+
+**2 Structure Balcon/Terrasse &gt; Béton**
+- Revêtements de sol
+- [ ] Garde-corps
+
+**Porche Entrée rue 42**
+- [ ] Porche
+
+**Porche Entrée rue 40**
+- [ ] Porche
+
+**Caractéristiques générales de la façade Ouest - Passerieu du Bâtiment Laetitia**
+- [ ] Orientation (°): [ ] 260
+- Nature de l'élément porteur: Briques pleines 21,5cm
+- Surface (m²): 126
+- [ ] Photo
+- Profondeur balcons/terrasses 1 (m)
+
+**Etat des lieux énergétiques de la façade Ouest - Passerieu du Bâtiment Laetitia**
+- [ ] Epaisseur de l'isolant (cm)
+- [ ] Etat énergétique
+- [ ] Complexe isolant
+- [ ] Isolation intérieure
+
+CITYA IMMOBILIER VICTOR HUGO
+Résidence Laetitia - Dossier 2022-013-115
+Page 11 sur 51
+
+---
+
+Les crochets [ ] suggèrent des cases à cocher, signifiant probablement que certaines décisions sont à prendre ou que certaines informations doivent être confirmées. J'ai préservé ces éléments tels quels. Il est possible que la mise en page originale du PDF comportait des éléments de formatage (tels que des tableaux ou des graphiques) qui ne sont pas reflétés dans ce texte brut.
+
+----------------------------------------------------------------
+
+Le texte extrait du PDF avec textract semble contenir des informations sur le projet de plan pluriannuel de travaux pour la résidence Laetitia. Les informations sont organisées mais ont été extraites telles quelles, perdant probablement une partie de la mise en forme initiale. Voici une tentative de reformatage pour améliorer la lisibilité :
+
+---
+
+**Projet de plan pluriannuel de travaux**
+ACCEO Energie
+
+**Etat technique de la façade Ouest - Passerieu du Bâtiment Laetitia**
+
+| Etat | Ouvrage concerné | Caractéristiques | Pathologie | Priorité | Photo technique |
+| --- | --- | --- | --- | --- | --- |
+| Murs | Enduit lisse | | Fissures | 3 | |
+| Murs | Enduit lisse | | Éclats béton | 3 | |
+| Balcon/Terrasse &gt; Béton | | | Stagnation d'eau | 2 | |
+| Structure | Problèmes d'étanchéité des balcons | | | 2 | |
+| Balcon/Terrasse &gt; Béton | | | Peinture post travaux | 2 | |
+| LE CHIEN | | | | | |
+| Balcon/Terrasse &gt; Béton | | | Revêtements de sol | | |
+| Balcon/Terrasse &gt; Acier | | | Garde-corps | | |
+| LE CHIEN | 05 62 | | | | |
+
+**Porche Entrée ext 38 Porche**
+
+**CITYA IMMOBILIER VICTOR HUGO**
+Résidence Laetitia - Dossier 2022-013-115
+Page 12 sur 51
+
+---
+
+Notez cependant, que les champs "Photo technique" n'ont pas été remplis dans le texte original extrait et certaines informations comme "LE CHIEN" et "05 62" ne sont pas claires dans leur contexte. À moins d'avoir accès à la page PDF originale ou d'autres informations complémentaires, l'interprétation exacte de ces parties reste difficile.
+
+----------------------------------------------------------------
+
+Il semble que vous ayez extrait un rapport de travaux d'une résidence, et que le texte a besoin d'être reformulé pour plus de clarté. Voici le texte reformaté :
+
+---
+
+**Projet de plan pluriannuel de travaux ACCEO Energie**
+
+**Caractéristiques générales de la façade NO - Dépêche du Bâtiment Laetitia**
+- Orientation (°): 315
+- Nature de l'élément porteur: Briques pleines 21,5cm
+- Surface (m²): 237
+- Photo: [Lieu pour insérer la photo]
+- Profondeur balcons/terrasses (m): [Information à compléter]
+
+**Etat des lieux énergétiques de la façade NO - Dépêche du Bâtiment Laetitia**
+- Epaisseur de l'isolant (cm): [Information à compléter]
+- Etat énergétique: [Information à compléter]
+- Isolation intérieure: [Information à compléter]
+
+**Etat technique de la façade NO - Dépêche du Bâtiment Laetitia**
+1. Ouvrage concerné: Murs
+   - Caractéristiques: Enduit lisse
+   - Pathologie: Fissures
+   - Priorité: 3
+   - Photo: [Lieu pour insérer la photo]
+2. Ouvrage concerné: Murs
+   - Caractéristiques: Enduit lisse
+   - Pathologie: Éclats béton
+   - Priorité: 3
+   - Photo: [Lieu pour insérer la photo]
+3. Ouvrage concerné: Balcon/Terrasse
+   - Matériau: Béton
+   - Problématique: Stagnation d'eau
+   - Priorité: 2
+   - Photo: [Lieu pour insérer la photo]
+4. Ouvrage concerné: Balcon/Terrasse
+   - Matériau: Béton
+   - Problématique: Peinture post travaux
+   - Priorité: 2
+   - Photo: [Lieu pour insérer la photo]
+5. Ouvrage concerné: Balcon/Terrasse
+   - Matériau: Béton
+   - Problématique: Problèmes d'étanchéité des balcons
+   - Priorité: 2
+   - Photo: [Lieu pour insérer la photo]
+6. Ouvrage concerné: Balcon/Terrasse
+   - Matériau: Béton
+   - Caractéristiques: Revêtements de sol
+   - Priorité: [Information à compléter]
+   - Photo: [Lieu pour insérer la photo]
+
+**CITYA IMMOBILIER VICTOR HUGO**
+- Résidence Laetitia - Dossier 2022-013-115
+- Page 13 sur 51
+
+---
+
+Les informations manquantes notées par des crochets [ ] indiquent probablement les zones où des données supplémentaires ou des images doivent être insérées. J'ai laissé ces crochets où les données semblent manquantes.
+
+----------------------------------------------------------------
+
+Certainement, je vais reformater le texte ci-dessus de façon plus lisible :
+
+---
+
+**Projet de plan pluriannuel de travaux ACCEO Energie**
+**Balcon/Terrasse &gt; Béton**
+- Garde-corps
+- Porche Entrée ext 2
+- Porche 
+- Porche entrée cour
+
+**Fibre de bois - intérieure**
+
+**Caractéristiques générales de la façade Pignon Nord du Bâtiment Laetitia**
+- Orientation (°): 35
+- Nature de l'élément porteur: Briques pleines 21,5 cm
+- Surface (m²): 65
+
+**Photo**
+- Profondeur balcons/terrasses: Non précisée
+
+**Etat des lieux énergétiques de la façade Pignon Nord du Bâtiment Laetitia**
+- Epaisseur de l'isolant (cm): 3
+- Etat énergétique: Indéfini
+- Isolation intérieure: Oui
+
+**Etat technique de la façade Pignon Nord du Bâtiment Laetitia**
+- **Etat technique**
+  - **Ouvrage concerné**: Murs
+  - **Caractéristiques**: Enduit lisse
+  - **Pathologie**: Fissures
+  - **Priorité**: 3
+- Photo
+- **Ouvrage concerné**: Murs
+  - **Caractéristiques**: Enduit lisse
+  - **Pathologie**: Éclats béton
+  - **Priorité**: 3
+
+**CITYA IMMOBILIER VICTOR HUGO**
+Résidence Laetitia - Dossier 2022-013-115
+Page 14 sur 51
+
+---
+
+Notez que le texte original contenait des balises `[ ]` qui semblent indiquer des champs vides ou des zones réservées à des informations manquantes ou non précisées dans le document original. J'ai omis ces balises lors de la reformatation pour une meilleure clarté. Veuillez les ajouter si nécessaire.
+
+----------------------------------------------------------------
+
+Le texte que vous avez fourni provient d'un rapport d'extraction d'une page PDF concernant le projet de plan pluriannuel de travaux pour la façade SE - cour int du Bâtiment Laetitia. Voici le texte reformulé de manière plus structurée et lisible, avec des listes pour clarifier les informations clés.
+
+---
+
+**Projet de plan pluriannuel de travaux - ACCEO Energie**
+
+**Caractéristiques générales de la façade SE - cour int du Bâtiment Laetitia**
+
+- **Orientation (°):** 135
+- **Nature de l'élément porteur:** Briques pleines 21,5 cm
+- **Surface (m²):** 237
+- **Profondeur balcons/terrasses (m):** 1
+
+**Etat des lieux énergétiques de la façade SE - cour int du Bâtiment Laetitia**
+
+- **Epaisseur de l'isolant (cm):** 3
+- **Complexe isolant:** Isolation intérieure
+- **État énergétique:** État 4
+
+**Etat technique de la façade SE - cour int du Bâtiment Laetitia**
+
+1. **Ouvrage concerné:** Murs
+   - **Caractéristiques:** Enduit lisse
+   - **Pathologie:** Fissures
+   - **Priorité:** 3
+
+2. **Ouvrage concerné:** Murs
+   - **Caractéristiques:** Enduit lisse
+   - **Pathologie:** Éclats béton
+   - **Priorité:** 3
+
+3. **Ouvrage concerné:** Balcon/Terrasse
+   - **Matériau:** Béton
+   - **Pathologie:** Stagnation d'eau
+   - **Priorité:** 2
+
+4. **Ouvrage concerné:** Balcon/Terrasse
+   - **Matériau:** Béton
+   - **Pathologie:** Peinture post travaux
+   - **Priorité:** 2
+
+5. **Ouvrage concerné:** Balcon/Terrasse
+   - **Matériau:** Béton
+   - **Pathologie:** Problèmes d'étanchéité des balcons
+   - **Priorité:** 2
+
+6. **Ouvrage concerné:** Balcon/Terrasse
+   - **Complément:** Revêtements de sol
+
+7. **Ouvrage concerné:** Balcon/Terrasse
+   - **Complément:** Garde-corps
+
+*Source: CITYA IMMOBILIER VICTOR HUGO - Résidence Laetitia - Dossier 2022-013-115 Page 15 sur 51*
+
+---
+
+Je n'ai pas ajouté les champs vides ([]) dans la reformulation, car ils semblent indiquer des espaces où des informations n'ont pas été saisies ou extraites. Pour toute information précise ou manquante, il serait nécessaire de consulter le PDF original.
+
+----------------------------------------------------------------
+
+Le texte extrait à partir d'un PDF peut parfois ne pas conserver la mise en forme originale, ce qui rend difficile de comprendre le contenu. Je vais tenter de le reformater pour plus de clarté. Toutefois, il est important de noter que certains éléments tels que les tableaux et les éléments graphiques ne peuvent pas être reproduits avec une grande précision dans un texte brut. De plus, sans voir le document original et sans plus de contexte, je ne peux qu'essayer de formater le texte d'une manière qui semble logique.
+
+Voici une tentative de reformatage :
+
+---
+
+**Projet de plan pluriannuel de travaux ACCEO Energie**
+
+_Porche Entrée int 2 Porche dépêche_
+
+**Caractéristiques générales de la façade Pignon Est cour int du Bâtiment Laetitia**
+
+- Orientation (°): 80
+- Nature de l'élément porteur: Briques pleines 21,5 cm
+- Surface (m²): 28
+- Profondeur balcons/terrasses: /(m)
+
+**Etat des lieux énergétiques de la façade Pignon Est cour int du Bâtiment Laetitia**
+
+- Epaisseur de l'isolant (cm): 3
+- Etat énergétique de l'isolant: 4
+
+**Etat technique de la façade Pignon Est cour int du Bâtiment Laetitia**
+
+- Etat technique: [Informations manquantes]
+- Ouvrage concerné: Enduit lisse
+- Caractéristiques: [Informations manquantes]
+- Pathologie: [Informations manquantes]
+- Priorité: [Informations manquantes]
+
+_Photo_
+
+**Caractéristiques générales de la façade Nord cour int du Bâtiment Laetitia**
+
+- Orientation (°): 35
+- Nature de l'élément porteur: Briques pleines 21,5 cm
+- Surface (m²): 395
+- Profondeur balcons/terrasses: /(m)
+
+_Photo_
+
+CITYA IMMOBILIER VICTOR HUGO
+
+Résidence Laetitia - Dossier 2022-013-115
+
+Page 16 sur 51
+
+---
+
+Il est possible que certaines informations manquent ou que certains éléments de mise en page ne soient pas représentés correctement à cause des limitations d'un texte brut. Si vous avez besoin d'une mise en forme spécifique ou si vous rencontrez des éléments spécifiques dans votre document original tels que des tableaux ou des images, vous devrez peut-être utiliser des outils de mise en forme avancés ou réintégrer manuellement ces éléments.
+
+----------------------------------------------------------------
+
+D'après le texte extrait du PDF, voici la réorganisation des informations pour une meilleure lisibilité :
+
+---
+
+**Projet de plan pluriannuel de travaux ACCEO Energie**
+
+**Etat des lieux énergétiques de la façade Nord cour intérieure du Bâtiment Laetitia**
+- Épaisseur de l'isolant (cm): [ ]
+- Etat énergétique: [ ]
+- Isolation intérieure: [ ]
+
+**Etat technique de la façade Nord cour intérieure du Bâtiment Laetitia**
+- Ouvrage concerné: Murs
+  - Caractéristiques: Enduit lisse
+  - Pathologie: Fissures
+  - Priorité: 3
+  - Photo: [ ]
+- Ouvrage concerné: Murs
+  - Caractéristiques: Enduit lisse
+  - Pathologie: Éclats béton
+  - Priorité: 3
+  - Photo: [ ]
+- Ouvrage concerné: Porche Entrée intérieure
+  - Caractéristiques: 40 porche
+  - Pathologie: [ ]
+  - Priorité: 
+  - Photo: [ ]
+- Ouvrage concerné: Porche Entrée intérieure
+  - Caractéristiques: 42 porche
+  - Pathologie: [ ]
+  - Priorité: 
+  - Photo: [ ]
+
+**Caractéristiques générales de la façade Pignon SE du Bâtiment Laetitia**
+- Orientation (°): [ ]
+- Nature de l'élément porteur: Briques pleines 21,5cm
+- Surface (m²): 79
+- Photo: [ ]
+- Profondeur balcons/terrasses (m): [ ]
+
+**Etat des lieux énergétiques de la façade Pignon SE du Bâtiment Laetitia**
+- Épaisseur de l'isolant (cm): [ ]
+- Etat énergétique: [ ]
+- Isolation intérieure: [ ]
+
+CITYA IMMOBILIER VICTOR HUGO
+Résidence Laetitia
+Dossier 2022-013-115
+Page 17 sur 51
+
+---
+
+Les crochets "[ ]" semblent indiquer des espaces à remplir ou des informations non disponibles ou non extraites.
+
+----------------------------------------------------------------
+
+Voici le texte extrait du fichier PDF après un reformatage pour améliorer sa lisibilité :
+
+---
+
+**Projet de plan pluriannuel de travaux ACCEO Energie**
+
+**État technique de la façade Pignon SE du Bâtiment Laetitia**
+
+---
+
+**État Ouvrage concerné Caractéristiques Pathologie Priorité Photo**
+
+- **Murs**: Enduit lisse ~ Fissures - Priorité: 3
+- **Murs**: Enduit lisse ~ Éclats de béton - Priorité: 3
+
+**Description des menuiseries**
+
+Lors de la visite sur site, nous avons relevé des menuiseries en double vitrage d'épaisseur moyenne, avec des volets battants en PVC. L'état des menuiseries est considéré comme correct.
+
+**État des lieux énergétiques des menuiseries du bâtiment Laetitia**
+
+- **Menuiseries**: Double vitrage 4/10/4, PVC, volets battants
+    - Dimensions [m]: Jun LY Mines Tipe de Suites
+        - État: 4
+        - Priorité: 2,3
+        - Performance: F1V
+        - Surface vitrée [m2]: F2
+
+- **Menuiseries**: Double vitrage 4/10/4, PVC, volets battants
+    - Dimensions [m]: 10,8
+        - État: 2,3
+        - Performance: F2V
+        - Surface vitrée [m2]: F2
+
+- **Menuiseries**: Double vitrage 4/10/4, PVC, volets battants
+    - Dimensions [m]: 11,5
+        - État: 2,3
+        - Cuisine: F1V
+
+- **Menuiseries**: Double vitrage 4/10/4, PVC, volets battants
+    - Dimensions [m]: 20,2
+        - État: 2,3
+        - Chambre R: F1V
+
+- **Menuiseries**: Double vitrage 4/10/4, PVC, volets battants
+    - Dimensions [m]: 38,9
+        - État: 2,3
+        - Séjour "carré": F1V
+
+- **Menuiseries**: Double vitrage 4/10/4, PVC, volets battants
+    - Dimensions [m]: 75,2
+        - État: 2,3
+        - Finestration: Fint
+
+- **Menuiseries**: Double vitrage 4/10/4, PVC, volets battants
+    - Dimensions [m]: 147
+        - État: 2.3
+        - Performance: PF2V
+
+---
+
+**CITYA IMMOBILIER VICTOR HUGO**
+
+**Résidence Laetitia - Dossier 2022-013-115**
+
+Page 18 sur 51
+
+[Les éléments entre crochets semblent indiquer des espaces vides ou des informations supprimées.]
+
+---
+
+Notez que les mesures en mètres et les détails techniques spécifiques pourraient nécessiter une clarification auprès de l'émetteur du document original, car ils semblent incomplets ou abrégés dans l'extrait fourni.
+
+----------------------------------------------------------------
+
+Bien sûr, voici le texte réformaté pour une présentation plus claire :
+
+---
+
+**Projet de plan pluriannuel de travaux - ACCEO Energie**
+
+**Les toitures**
+- La toiture du bâtiment est de type combles perdus et dispose d'une isolation d'origine en laine soufflée.
+
+**Caractéristiques générales de la toiture du Bâtiment Laetitia**
+- Type toiture: Pentue
+- Surface: 1 200 m²
+- Photo: [ ]
+- Nature de la structure: Charpente porteuse traditionnelle bois
+
+**Etat des lieux énergétiques de la toiture du Bâtiment Laetitia**
+- Epaisseur de l'isolant: LV soufflée 30 cm
+- Etat énergétique: [ ]
+
+**Etat technique de la toiture du Bâtiment Laetitia**
+- Etat technique: [ ]
+- Ouvrage concerné: Isolation
+- Caractéristiques: Laine soufflée
+- Pathologie: [ ]
+- Priorité: [ ]
+- Photo: [ ]
+- Couverture: Tuiles
+- Protection: [ ]
+- Etanchéité avec finition: [ ]
+
+**Planchers bas**
+Différents types de planchers bas ont été repérés lors des relevés sur site :
+- Plancher bas sur commerces (locaux chauffés) non déperditif
+- Plancher bas sur halls non isolé
+- Plancher bas sur porche non isolé
+- Plancher bas sur porche accès garage isolé
+
+**CITYA IMMOBILIER VICTOR HUGO**
+Résidence Laetitia - Dossier 2022-013-115
+Page 19 sur 51
+
+[Les crochets [ ] indiquent probablement des espaces où des images ou d'autres informations spécifiques doivent être insérées.]
+
+---
+
+----------------------------------------------------------------
+
+Voici le texte reformaté pour une meilleure lisibilité :
+
+---
+
+**Projet de plan pluriannuel de travaux**
+
+**ACCEO Energie**
+
+**Caractéristiques générales du plancher bas du Bâtiment Laetitia**
+
+- Surface (m²): 1200
+- Nature de la structure: Dalles pleines en béton
+
+**État des lieux énergétiques du plancher bas du Bâtiment Laetitia**
+
+- Épaisseur de l'isolant (cm): [Information manquante]
+- État énergétique: [Information manquante]
+
+**État technique du plancher bas du Bâtiment Laetitia**
+
+- Ouvrage concerné: Revêtements de sol
+  - Caractéristiques: Carrelage
+  - Pathologie: [Information manquante]
+  - Priorité: [Information manquante]
+
+- Ouvrage concerné: Revêtements de sol
+  - Caractéristiques: Carrelage
+  - Pathologie: [Information manquante]
+  - Priorité: [Information manquante]
+
+- Ouvrage concerné: Revêtements de sol
+  - Caractéristiques: Carrelage
+  - Pathologie: [Information manquante]
+  - Priorité: [Information manquante]
+
+- Ouvrage concerné: Revêtements de sol
+  - Caractéristiques: Carrelage
+  - Pathologie: [Information manquante]
+  - Priorité: [Information manquante]
+
+- Ouvrage concerné: Plafonds
+  - Caractéristiques: Béton
+  - Pathologie: [Information manquante]
+  - Priorité: [Information manquante]
+
+
+**CITYA IMMOBILIER VICTOR HUGO**
+
+Résidence Laetitia - Dossier 2022-013-115
+
+Page 20 sur 51
+
+---
+
+*Note : Des informations semblent manquer dans ce texte (des indications [ ] sont présents), ce qui suggère que l'extraction du PDF n'a peut-être pas capturé toutes les données ou que le texte original contenait des champs à compléter ultérieurement. Il conviendrait de vérifier le document PDF d'origine pour toute information manquante.*
+
+----------------------------------------------------------------
+
+Voici le texte extrait réformaté pour une meilleure lisibilité :
+
+---
+
+**Projet de plan pluriannuel de travaux**
+**ACCEO Energie**
+
+**2.2. Description des espaces intérieurs**
+
+Les peintures des murs, plafonds et garde-corps de chaque cage d'escalier étaient en cours de réalisation lors des relevés. Ainsi, aucune pathologie n'a été relevée.
+
+**Parties communes bloc 2 avenue de la Dépêche**
+
+**État technique**
+
+| État | Ouvrage concerné | Caractéristiques | Pathologie | Priorité | Photo technique |
+|------|------------------|------------------|------------|----------|-----------------|
+|      | Entrée bloc      | Porte entrée     | Entrée bloc - opaque | - | - |
+|      |                  | Interphone       | - | - | Contrôle d'accès |
+|      | Hall d'entrée    | Portes de circulations | Porte opaque à 1 vantail | - | - |
+|      | Murs intérieurs  | Béton            | - | - | - |
+|      | Revêtements de sol | Carrelage       | - | - | - |
+|      | Plafonds         | Béton            | - | - | - |
+|      | Eclairage        | Fluocompacte     | - | - | - |
+
+**CITYA IMMOBILIER VICTOR HUGO**
+*Résidence Laetitia - Dossier 2022-013-115*
+Page 21 sur 51
+
+---
+
+J'ai pris la liberté de supposer que la section "État technique" s'organisait sous forme d'un tableau à colonnes. Il se peut que le formatage de la page PDF originale soit différent, mais sans accès visuel à la page, c'est une interprétation commune pour structurer les informations données.
+
+----------------------------------------------------------------
+
+Bien sûr, voici une manière plus lisible de présenter les informations extraites de votre page PDF, tout en respectant la structure du texte original :
+
+---
+
+**Projet de plan pluriannuel de travaux ACCEO Energie**
+
+*Interrupteurs Va-et-vient* : 
+
+- Boîtes aux lettres : Bloc métal
+- Placards compteurs : Placards
+- électriques : Cage d'escaliers
+
+**Structure** : Béton
+
+- Marches : Béton
+- Revêtements de sol : Béton
+- Murs intérieurs : Béton
+- Plafonds : Béton
+- Garde-corps : Acier peint
+
+---
+
+CITYA IMMOBILIER VICTOR HUGO
+
+Résidence Laetitia - Dossier 2022-013-115
+
+Page 22 sur 51
+
+---
+
+Veuillez noter que certaines informations comme les "Placards compteurs" semblent coupées ou incomplètes, et il n'est pas clairement indiqué à quoi chacun des éléments suivants s'applique. S'il s'agit d'une liste des travaux avec leurs matériaux respectifs, il se pourrait que la mise en page originale du PDF ait contribué à une confusion lors de l'extraction du texte. J'ai tenté de deviner et d'organiser au mieux ces informations, mais il se pourrait que certaines précisions soient nécessaires pour un compte rendu exact.
+
+----------------------------------------------------------------
+
+Projet de plan pluriannuel de travaux ACCEO Energie
+
+- **Couloirs accès logements**
+  - Porte opaque 
+  - Portes de logements - vantail
+  
+- **Revêtements de sol**
+  - Carrelage
+  
+- **Murs intérieurs**
+  - Béton
+  
+- **Plafonds**
+  - Béton
+  
+- **Eclairage**
+  - Fluocompacte
+  
+- **Interrupteurs**
+  - Va-et-vient
+  
+- **Placards compteurs électriques**
+  - Placards
+  
+- **Trappes**
+  - Trappe d'accès
+
+CITYA IMMOBILIER VICTOR HUGO
+
+Résidence Laetitia - Dossier 2022-013-115
+
+Page 23 sur 51
+
+[Les éléments entre crochets [ ] semblent indiquer une information incomplète ou à préciser.]
+
+----------------------------------------------------------------
+
+Projet de plan pluriannuel de travaux 
+ACCEO Energie 
+Parties communes 
+Bloc 38 avenue Passerieu 
+
+État technique:
+
+1. Entrée bloc 
+   - Ouvrage concerné: Porte entrée
+   - Caractéristiques: opaque
+   - Pathologie: -
+   - Priorité: -
+   - Photo technique: -
+
+2. Entrée bloc (suite)
+   - Ouvrage concerné: Interphone
+   - Caractéristiques: Contrôle d'accès
+   - Pathologie: -
+   - Priorité: -
+   - Photo technique: -
+
+3. Hall d'entrée 
+   - Portes de circulations: Porte opaque à 1 vantail
+   - Murs intérieurs: Béton
+   - Revêtements de sol: Carrelage
+   - Plafonds: Béton
+   - Eclairage: Fluocompacte
+   - Interrupteurs: Va-et-vient
+
+CITYA IMMOBILIER VICTOR HUGO 
+Résidence Laetitia 
+Dossier 2022-013-115 
+Page 24 sur 51
+
+----------------------------------------------------------------
+
+Il semble que le texte extrait est une liste de composants ou d'éléments liés à un projet de plan pluriannuel de travaux. Voici une tentative de reformatage pour une meilleure lisibilité, tout en sachant que le format original du PDF n'est pas connu :
+
+---
+
+**Projet de plan pluriannuel de travaux**  
+**ACCEO Energie**
+
+**Résidence Laetitia - Dossier 2022-013-115**  
+**Page 25 sur 51**
+
+- **Boîtes aux lettres**: Bloc métal
+- **Placards compteurs**: Placards - électriques
+- **Cage d'escaliers Structure**:
+  - **Marches**: Béton
+  - **Revêtements de sol**: Béton
+  - **Murs intérieurs**: Béton
+  - **Plafonds**: Béton
+  - **Garde-corps**: Acier peint
+- **Couloirs accès logements**:
+  - **Porte**: opaque 1 vantail
+
+**Portes de logements**:  
+- [ ] (Information ou élément précis non fourni)
+
+**CITYA IMMOBILIER VICTOR HUGO**  
+
+Note: Les crochets "[ ]" semblent indiquer qu'il pourrait y avoir des cases à cocher ou des informations manquantes, mais sans plus de contexte, il est difficile de savoir exactement ce qu'ils sont supposés représenter.
+
+---
+
+S'il y a des instructions spécifiques concernant la mise en forme ou des détails supplémentaires qui ne sont pas clairs dans l'extraction textuelle fournie, veuillez les fournir pour une aide plus précise.
+
+----------------------------------------------------------------
+
+Projet de plan pluriannuel de travaux
+ACCEO Energie
+
+Revêtements de sol:
+- Carrelage
+
+Murs intérieurs:
+- Béton
+
+Plafonds:
+- Béton
+
+Eclairage:
+- Fluocompacte
+
+Interrupteurs:
+- Va-et-vient
+
+Placards compteurs électriques:
+- Placards
+- Trappes: [Trappe d'accès]
+
+Parties communes bloc 40 avenue Passerieu:
+- Etat technique
+  - Etat
+  - Ouvrage concerné
+  - Caractéristiques
+  - Pathologie
+  - Priorité
+  - Photo technique
+
+Entrée bloc:
+- Porte entrée: Entrée bloc opaque
+
+CITYA IMMOBILIER VICTOR HUGO
+Résidence Laetitia
+- Dossier 2022-013-115
+Page 26 sur 51
+[ ]
+
+----------------------------------------------------------------
+
+Pour reformater le texte extrait du PDF, nous devons organiser l'information d'une manière claire et structurée. Voici une version reformulée :
+
+---
+
+**Projet de plan pluriannuel de travaux ACCEO Energie**
+
+**Entrée bloc**: 
+- Interphone - Contrôle d'accès
+- Hall d'entrée
+
+**Portes**:
+- Porte opaque à un vantail
+
+**Murs intérieurs**: 
+- Béton
+
+**Revêtements de sol**: 
+- Carrelage
+
+**Plafonds**: 
+- Béton
+
+**Eclairage**: 
+- Fluocompacte
+
+**Interrupteurs**: 
+- Va-et-vient
+
+**Boîtes aux lettres**: 
+- Bloc métal
+
+**Placards**:
+- Compteurs électriques
+
+**Gestionnaire de la résidence**:
+- CITYA IMMOBILIER VICTOR HUGO
+
+**Résidence**: 
+- Laetitia
+
+**Dossier**:
+- 2022-013-115
+
+**Page**:
+- 27 sur 51
+
+---
+
+Notez que les éléments entre crochets [ ] ont été omis, car il n'y avait pas d'informations spécifiques incluses pour eux. Si ces crochets représentaient des cases à cocher ou d'autres données, vous devriez fournir des détails pour les inclure correctement.
+
+----------------------------------------------------------------
+
+Voici le texte reformaté pour une meilleure lisibilité :
+
+---
+
+**Projet de plan pluriannuel de travaux**
+**ACCEO Energie**
+**Résidence Laetitia**
+**Dossier 2022-013-115**
+**Page 28 sur 51**
+
+**Cage d'escaliers:**
+- Structure: Béton
+- Marches: Béton
+- Revêtements de sol: Béton
+- Murs intérieurs: Béton
+- Plafonds: Béton
+- Garde-corps: Acier peint
+
+**Couloirs accès logements:**
+- Porte opaque: 1 vantail
+- Revêtements de sol: Carrelage
+- Murs intérieurs: Béton
+
+**Portes de logements:** N/A
+
+---
+
+**CITYA IMMOBILIER VICTOR HUGO**
+
+Note: "N/A" est utilisé pour indiquer l'absence d'information (Not Available) pour les "Portes de logements".
+
+----------------------------------------------------------------
+
+Voici le texte extrait et reformaté pour une meilleure compréhension :
+
+---
+
+**Projet de plan pluriannuel de travaux**   
+ACCEO Energie
+
+**Plafonds**   
+Béton
+
+**Eclairage**   
+Fluocompacte
+
+**Interrupteurs**   
+Va-et-vient
+
+**Placards**   
+Compteurs électriques   
+Trappes d'accès
+
+---
+
+**Parties communes**   
+Bloc 42 avenue Passerieu
+
+**Etat technique**
+
+| Ouvrage concerné | Caractéristiques        | Pathologie | Priorité | Photo technique |
+|------------------|-------------------------|------------|----------|-----------------|
+| Entrée bloc      | Porte entrée opaque     |            |          |                 |
+| Interphone       | Contrôle d'accès        |            |          |                 |
+
+---
+
+CITYA IMMOBILIER VICTOR HUGO   
+Résidence Laetitia   
+Dossier 2022-013-115   
+Page 29 sur 51
+
+---
+
+Notez s'il vous plaît que les informations concernant "État technique," "Pathologie," et "Priorité" ne sont pas complétées dans le texte fourni.
+
+----------------------------------------------------------------
+
+Voici le texte reformaté pour une meilleure lisibilité:
+
+---
+
+**Projet de plan pluriannuel de travaux**
+
+**ACCEO Energie**
+
+**Hall d'entrée**
+- Portes de Porte opaque: 1 vantail
+- Murs intérieurs: Béton
+- Revêtements de sol: Carrelage
+- Plafonds: Béton
+- Éclairage: Fluocompacte
+- Interrupteurs: Va-et-vient
+- Boîtes aux lettres: Bloc métal
+- Placards compteurs électriques: Placards
+
+**Cage d'escaliers**
+- Structure: Béton
+
+**CITYA IMMOBILIER VICTOR HUGO**
+Résidence Laetitia - Dossier 2022-013-115
+Page 30 sur 51
+
+---
+
+Notez que les détails tels que "circulations", "Métal", et autres termes qui ne sont pas clairement associés à une catégorie ont été omis du texte reformaté car ils n’étaient pas explicitement liés à des éléments dans le texte extrait. Si ces termes sont importants et que vous souhaitez les inclure, il serait nécessaire de clarifier leur contexte ou leur lien avec les éléments du hall d'entrée ou de la cage d'escaliers.
+
+----------------------------------------------------------------
+
+Voici une version reformattée du texte extrait du PDF:
+
+---
+
+**Projet de plan pluriannuel de travaux**
+
+**ACCEO Energie**
+
+**Marches**
+- Béton
+- Revêtements de sol
+
+**Murs intérieurs**
+- Béton
+
+**Plafonds**
+- Béton
+
+**Garde-corps**
+- Acier peint
+
+**Couloirs accès logements**
+- Porte opaque
+- 1 Porte de logement – vantail
+
+**Revêtements de sol**
+- Carrelage
+
+**Murs intérieurs**
+- Béton
+
+**Plafonds**
+- Béton
+
+---
+
+**CITYA IMMOBILIER VICTOR HUGO**
+
+**Résidence Laetitia**
+
+**Dossier 2022-013-115**
+
+**Page 31 sur 51**
+
+---
+
+Notez que le texte entre crochets `[ ]` semble indiquer des cases à cocher ou des champs à compléter dans le document original. Ces éléments ont été omis dans le reformatage puisqu'ils ne contenaient pas de texte informatif supplémentaire.
+
+----------------------------------------------------------------
+
+Il semble que le texte extrait soit une liste d'éléments liés à un projet de travaux pluriannuel d'une résidence nommée "Laetitia". Voici le texte reformaté en respectant une certaine logique et en utilisant un format de liste plus lisible :
+
+Projet de plan pluriannuel de travaux
+ACCEO Energie
+- Eclairage Fluocompacte
+- Interrupteurs Va-et-vient
+
+Placards compteurs
+- Placards électriques
+
+Trappes 
+- Trappe d'accès
+
+Caves, box, garages, locaux annexes
+- Revêtements de sol Béton
+
+Local poubelles
+- Murs intérieurs Brique
+- Plafonds Béton
+- Eclairage Fluocompacte
+- Interrupteurs Va-et-vient
+
+CITYA IMMOBILIER VICTOR HUGO
+Résidence Laetitia - Dossier 2022-013-115
+Page 32 sur 51
+
+Sans plus de contexte ou de mise en page originale, je vous ai présenté les éléments sous forme de liste avec des sous-titres et des tirets pour mieux structurer l'information. Il semble que chaque élément de la liste concerne différents aspects de la rénovation ou de la maintenance de certaines parties de la résidence, classés par catégories (éclairage, placards, trappes, revêtements, etc.).
+
+----------------------------------------------------------------
+
+Bien sûr, je vais reformater le texte pour le rendre plus lisible et structuré. Voici une version corrigée:
+
+---
+
+**Projet de plan pluriannuel de travaux ACCEO Energie**
+
+**2.3. Description des installations climatiques** 
+
+**[Chauffage]**
+
+*Émetteurs de chaleur* 
+
+Les appartements sont chauffés via des radiateurs électriques. Le nombre de radiateurs par logement dépend du nombre de pièces. Les pièces suivantes sont équipées d'émetteurs : les chambres, le salon, la cuisine et la salle de bain. Soit, pour un T2, 4 radiateurs, pour un T4, 6 radiateurs.
+
+Un radiateur transmet la chaleur à l'air ambiant d'une pièce. L'échange est d'autant plus important que l'air circule facilement autour du radiateur. Cela permet aussi de bien homogénéiser la température de l'air de la pièce. Un cache-radiateur ou même une tablette au-dessus du radiateur freine l'air, et freine cet échange. Par ailleurs, le mur sur lequel est accroché ce radiateur chauffe plus et transmet la chaleur à l'extérieur.
+
+**[Climatisation]**
+
+Le bâtiment n'est pas climatisé dans son ensemble.
+
+**[L'eau chaude sanitaire (ECS)]**
+
+*Générateurs d'eau chaude sanitaire*
+
+L'eau chaude sanitaire des logements est produite via des ballons électriques à accumulation.
+
+**3. Description des équipements**
+
+**3.1. Ventilation**
+
+Le débit (m³/h) de chaque bouche d'extraction (WC, salle de bain et cuisine) des logements visités a été mesuré. Mesure du débit d'une bouche d'extraction à l'aide d'un anémomètre à hélice avec cône.
+
+**CITYA IMMOBILIER VICTOR HUGO**
+
+*Résidence Laetitia - Dossier 2022-013-115*
+
+Page 33 sur 51
+
+**[ ] [ ] [ ]**
+
+---
+
+J'ai supprimé les crochets vides [ ] qui peuvent être des marqueurs de champs non exploités dans l'extraction de texte ou des éléments de mise en page qui ont été retranscrits dans le texte. Si ces marques avaient une signification particulière, veuillez les réintégrer au bon endroit dans la structure du document.
+
+----------------------------------------------------------------
+
+Voici le texte extrait du PDF reformaté pour une meilleure lecture :
+
+---
+
+**Projet de plan pluriannuel de travaux**
+
+**ACCEO Energie**
+
+---
+
+**Caractéristiques générales sur le renouvellement d'air du bâtiment Laetitia**
+
+---
+
+- **Système VMC:** 
+  - Type: Simple flux
+  - Régulation: Aucun
+  - Renouvellement d'air :
+    - Débit moyen d'extraction (vol/h): [Information manquante]
+    - Nombre total d'extracteurs: 1
+    - [Information manquante] m3/h
+
+La ventilation est de type Ventilation Mécanique Contrôlée (VMC), c'est-à-dire que l'air est mis en mouvement par un groupe d'extraction comportant un ventilateur. L'air frais venant de l'extérieur traverse d'abord les pièces de séjour et les chambres et est évacué des pièces humides (cuisine, salle de bain et WC) par le groupe d'extraction. La VMC a des débits d'air constants quelles que soient les conditions extérieures (vent, pluie) et intérieures (nombre d'occupants, humidité).
+
+---
+
+**Caractéristiques générales des bouches d'entrée d'air et d'extraction du bâtiment**
+
+[Information manquante]
+
+---
+
+**[Laetitia] [muster]**
+
+- **Tipe:** [Information manquante] (with Photo Date Eta)
+- **Salon Entrée d'air:** Fixe / 4 i
+
+---
+
+**IMPORTANT**
+
+Il est interdit de brancher une hotte de cuisine sur un conduit collectif de ventilation. En effet, cela peut dérégler l'équilibre aéraulique de l'installation. En pratique, les odeurs de cuisine peuvent refouler dans les appartements voisins. Les hottes de cuisine doivent donc être raccordées en mode recyclage.
+
+---
+
+**CITYA IMMOBILIER VICTOR HUGO**
+
+**Résidence Laetitia - Dossier 2022-013-115**
+
+Page 34 sur 51
+
+---
+
+[Information additionnelle manquante]
+
+---
+
+Note: j’ai remplacé les informations manquantes par [Information manquante] car elles ne sont pas fournies dans le texte d'origine. Pour inclure ces informations, veuillez les remplir à l'endroit approprié.
+
+----------------------------------------------------------------
+
+Projet de plan pluriannuel de travaux ACCEO Energie
+
+III. Analyse énergétique de la situation actuelle du site
+
+1. Niveaux de Consommations énergétique et Gaz à effet de serre conventionnels
+
+Le calcul réglementaire thermique a été réalisé via le logiciel Liciel Diagnostics distribué par Liciel Environnement sur la base du moteur de calculs DPE 3CL. C'est un mode de calcul qui ne prend en compte que les caractéristiques énergétiques du bâtiment et considère une occupation conventionnelle. Par conséquent, les ouvertures de fenêtres, la température de chauffage, et le nombre de douches sont tous standardisés. Cela permet d'évaluer l'efficacité énergétique du bâtiment indépendamment des usages. Les résultats ne reflètent donc pas nécessairement les consommations réelles du site.
+
+Pour obtenir des consommations énergétiques qui correspondent aux factures, et pour évaluer au mieux les économies d'énergie réalisables, il faudrait recourir à des audits énergétiques statique ou dynamique (STSh ou STD) qui prennent précisément en compte ces usages spécifiques.
+
+La valeur CEP indique la consommation conventionnelle d'énergie primaire, qui inclut le chauffage, le refroidissement, l'éclairage, la production d'eau chaude sanitaire et les auxiliaires (pompes et ventilateurs). L'énergie primaire est celle contenue dans les ressources naturelles avant toute transformation. Le gaz, le pétrole et le bois sont des exemples d'énergie primaire, pouvant être utilisés sans transformation. À l'inverse, l'électricité, obtenue par la transformation de ressources naturelles dans des centrales et soumise à des pertes de transport, n'est pas une énergie primaire.
+
+L'énergie finale représente la quantité d'énergie consommée et facturée au point d'utilisation. Pour obtenir l'énergie primaire, on ajoute à l'énergie finale l'énergie nécessaire à sa production et à son acheminement, tout en intégrant les notions de rendement de production et les pertes.
+
+Coefficients de conversion de l'énergie finale (kWhef) en énergie primaire (kWhep) selon la méthode DPE 3CL:
+- Bois: 1
+- Gaz: 1
+- Fioul: 1
+- Réseau urbain: 1
+- Electricité: 2.3
+- Solaire: 1
+
+La valeur GES désigne la quantité d'émissions de gaz à effet de serre liées aux postes de consommation estimés par le calcul réglementaire. L'indice s'exprime en kilogramme équivalent CO2 par mètre carré et par an (kgéqCO2/m2.an).
+
+CITYA IMMOBILIER VICTOR HUGO
+Résidence Laetitia
+Dossier 2022-013-115
+Page 35 sur 51
+
+----------------------------------------------------------------
+
+Il semblerait que le texte extrait de votre PDF soit relatif à des informations énergétiques et des étiquettes de performance pour des bâtiments. Voici une tentative de reformater le texte pour vous :
+
+---
+
+**Projet de plan pluriannuel de travaux - ACCEO Energie**
+
+**Nouveaux double-seuils des Énergie primaire et étiquettes de performance énergétique :**
+
+- **G**: [ ] 420 kWh/m².an | 70 kg CO2eq/m².an
+- **F**: 330 kWh/m².an | 110 kg CO2eq/m².an
+- **E**: 250 kWh/m².an | 180 kg CO2eq/m².an
+- **D**: [ ] 180 kWh/m².an | 30 kg COeq/m².an
+- **C**: [ ] 250 kWh/m².an | 250 kg COeq/m².an
+- **B**: 330 kWh/m².an | 70 kg CO2eq/m².an
+- **A**: 70 kWh/m².an | 420 kg CO2eq/m².an
+
+**Niveaux énergétiques et de gaz à effet de serre du calcul 3CL du DPE**
+
+- **Niveau énergétique et de gaz à effet de serre des bâtiments du site**
+
+  **NOUVEAU DPE:**
+
+  - **Lettre DPE**: C
+  - **CEP (kWhep/m².an)**: Valeurs [À COMPLÉTER]
+  - **GES (kgco2/m².an)**: Valeurs [À COMPLÉTER]
+
+  **Exemple pour l'année 2021 - Bâtiment "Laetitia":**
+
+  - **DPE**: D
+  - **CEP**: 243 kWhep/m².an
+  - **GES**: 7 kgco2/m².an
+
+---
+
+**CITYA IMMOBILIER VICTOR HUGO**
+
+**Résidence Laetitia - Dossier 2022-013-115**
+
+**Page 36 sur 51**
+
+---
+
+Notez que " [ ] " dans le texte peut indiquer une case à cocher ou un élément qui n'a pas été reconnu ou complété. J'ai besoin de plus d'informations pour comprendre ces espaces afin de les restituer correctement. Les termes "CEP (kWhep/m².an)" correspondent à la consommation d'énergie primaire par mètre carré et par an, tandis que "GES (kgco2/m².an)" correspond aux émissions de gaz à effet de serre par mètre carré et par an. J'ai également supposé que les erreurs comme "CO.eg/m5.4 an" résultent de l'extraction de texte et devraient en réalité être "CO2eq/m².an". J'ai ajouté "Valeurs [À COMPLÉTER]" pour indiquer que certaines informations sont manquantes.
+
+----------------------------------------------------------------
+
+Projet de plan pluriannuel de travaux ACCEO Energie
+
+**IV. Propositions d'améliorations**
+
+1. **Précision sur les calculs des préconisations**
+   Le chiffrage des travaux dans le cadre de cette étude correspond à des ordres de grandeur relatifs aux travaux d'amélioration énergétique et ne peut être considéré comme étant aussi précis que celui obtenu en phase d'avant-projet d'une maîtrise d'œuvre de travaux. Ils ne prennent pas en compte des éventuels surcoûts liés à des problèmes de mise en œuvre, de présence d'amiante ou encore de travaux induits ou complémentaires d'amélioration architecturale, technique ou esthétique. En effet, même si les coûts des matériaux et équipements sont précisément estimés, le niveau de complexité de mise en œuvre des travaux par les entreprises ne peut être évalué à ce stade.
+
+   **Amiante**
+   Nous rappelons que pour les immeubles dont le permis de construire a été délivré avant le 1er juillet 1997, si vous souhaitez entreprendre des travaux, il conviendra préalablement de procéder à un Repérage Amiante Avant Travaux (RAAT). Les résultats de cette étude devront être transmis aux entreprises de travaux consultées afin qu'elles puissent prendre toutes dispositions nécessaires et obligatoires dans leurs offres.
+
+   **Recouvrement des préconisations énergétiques et techniques**
+   Pour chaque proposition de scénario de travaux, les recouvrements entre les préconisations énergétiques et techniques par corps d'état sont bien pris en compte et les préconisations techniques non recouvertes par la préconisation énergétique seront listées et chiffrées. À titre d'exemple, la mise en place d'une isolation par l'extérieur intègre le traitement des pathologies en façades.
+
+   **Certificats d'Économies d'Énergie**
+   Le dispositif des Certificats d'Économie d'Énergie, appelés CEE, a été mis en place par l'État en 2006 pour financer la transition énergétique. Ce dispositif oblige les fournisseurs d'énergie à inciter les consommateurs à réaliser des économies d'énergie avec des objectifs à respecter pour des périodes données. Chaque action de rénovation éligible engendre des kWh cumac qui peuvent être revendus (environ 0,00628 €-kWh cumac).
+
+   **MaPrimeRénov' Copro**
+   Lancée le 1er janvier 2020, MaPrimeRenov' Copro remplace le crédit d'impôt pour la transition énergétique (CITE) et les aides de l'Agence nationale de l'Habitat (Anah). MaPrimeRénov Copro permet de financer les travaux d'isolation, de chauffage, de ventilation ou d'audit énergétique. Les travaux doivent avoir été effectués par des entreprises labellisées RGE (reconnues garantes pour l'environnement). Le montant de la prime est forfaitaire. Il est calculé en fonction des revenus du foyer et du gain écologique permis par les travaux.
+
+   **Taux de TVA réduit à 5.5%**
+   Dans le cadre de travaux de rénovation énergétique, si les travaux ouvrent droit aux crédits d'impôts tels que détaillés ci-dessus, le taux de TVA applicable passe à 5.5% sur lesdits travaux et les travaux induits.
+
+_CITYA IMMOBILIER VICTOR HUGO
+Résidence Laetitia
+Dossier 2022-013-115
+Page 37 sur 51_
+
+----------------------------------------------------------------
+
+D'après le texte extrait que vous avez fourni, voici une version reformattée pour plus de clarté :
+
+---
+
+**Projet de Plan Pluriannuel de Travaux ACCEO Energie**
+
+**2. Synthèse des propositions d'amélioration**
+
+Les tableaux ci-dessous correspondent à un récapitulatif de toutes les améliorations énergétiques et techniques préconisées.
+
+**Récapitulatif des améliorations techniques préconisées**
+
+| Poste                 | Description de la solution     | Photos | Coût de la solution (€TTC) |
+|-----------------------|-------------------------------|--------|----------------------------|
+| **FAÇADES**           | Ravalement des façades        | [ ]    | 109 000                    |
+| **FAÇADES (reprises ponctuelles)** | Reprises ponctuelles          | [ ]    | 3 500                      |
+| **BALCONS**           | Traitement des balcons        | [ ]    | 44 800                     |
+           
+CITYA IMMOBILIER VICTOR HUGO
+
+Résidence Laetitia - Dossier 2022-013-115
+
+Page 38 sur 51
+
+---
+
+Note : Les éléments "Photos" ont été laissés entre crochets [ ] car il n'y a pas d'informations fournies. Si les images étaient jointes dans le document PDF original, alors vous devrez les référencer ou les joindre séparément, car le texte seul ne peut refléter la présence de photographies.
+
+----------------------------------------------------------------
+
+Voici le texte reformaté pour une meilleure lisibilité :
+
+---
+
+**Projet de plan pluriannuel de travaux**  
+**ACCEO Energie**  
+**Récapitulatif des améliorations énergétiques préconisées**
+
+Description de la solution | Poste | Photos | Coût de la solution (€TTC) | Evaluation énergétique du site après chaque amélioration
+--------------------------|-------|--------|---------------------------------|----------------------------------------
+Mise en place d'une isolation thermique du plancher bas | BÂTIMENT LAETITIA | | 4 200 | Lettre CEP1: D - GES2: 238 - 7
+Isolation thermique par l'extérieur (ITE) | BÂTIMENT LAETITIA | | 257 000 | Lettre CEP: D - GES: 220 - 6
+Mise en place d'une VMC plus performante | ÉQUIPEMENT LAETITIA | | 12 540 | Lettre CEP: D - GES: 217 - 6
+Remplacement des menuiseries par du double vitrage | BÂTIMENT LAETITIA | | 170 400 | Lettre CEP: D - GE
