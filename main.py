@@ -1,7 +1,8 @@
-import json, os, time, torch
+import json, os, time, torch, traceback, logging
 from threading import Thread
 from faker import Faker
 from datetime import datetime
+
 from transformers import AutoTokenizer, TextIteratorStreamer
 import chainlit as cl
 from chainlit.input_widget import Select, Switch, Slider
@@ -11,11 +12,10 @@ from transformers import pipeline
 
 import backend.wsgi as django_app
 
-app.mount('/v1/', WSGIMiddleware(django_app.application))
 from vllm import LLM, SamplingParams
 from torch.nn import DataParallel
 
-from transformers import AutoTokenizer, AutoModelForCausalLM
+
 
 
 
@@ -23,20 +23,9 @@ def on_server():
     return os.path.isdir('/home/ubuntu/llm_experiments')
 
 if on_server():
-    model_name_or_path = "/home/ubuntu/llm_experiments/Yarn-Mistral-7B-128k-AWQ"
+    pass
+    # initialize_model()
 
-    # Load tokenizer
-    tokenizer = AutoTokenizer.from_pretrained(model_name_or_path, trust_remote_code=False)
-    from awq import AutoAWQForCausalLM
-
-    tokenizer = AutoTokenizer.from_pretrained(model_name_or_path, trust_remote_code=True)
-    # Load model
-    model = AutoAWQForCausalLM.from_quantized(model_name_or_path, trust_remote_code=True,
-                                              fuse_layers=True,
-                                              safetensors=True,
-                                              use_cache=False)
-
-app.mount('/v1/', WSGIMiddleware(django_app.application))
 
 
 class SpecialTextIteratorStreamer(TextIteratorStreamer):
@@ -388,6 +377,10 @@ from pydantic import BaseModel
 
 from chainlit.server import app
 
+
+
+app.mount('/v1/', WSGIMiddleware(django_app.application))
+
 @app.post("/api/prompt")
 def hello(request: Request):
     print(request.headers)
@@ -400,18 +393,23 @@ def hello(request: Request):
 def test_postgres():
     pass
 
-@app.post("/api/initialize")
+@app.get("/api/initialize")
 def hello(request: Request):
-    from llm.rag import query, initialize, test_connection_to_db
+    from backend.llm.rag import initialize
 
-    return True
-    if test_connection_to_db('hello'):
-        return test_connection_to_db('hello')
-        print(request.headers)
-        if on_server():
-            result = request.body()
-            if "pages" in result:
-                initialize(result['pages'])
-        else:
-            result = json.dumps(request.body())
-    return {"result": result}
+    try:
+        return initialize()
+    except Exception as e:
+        return (f"{e} {traceback.format_exc()}")
+
+
+    # if test_connection_to_db('hello'):
+    #     return test_connection_to_db('hello')
+    #     print(request.headers)
+    #     if on_server():
+    #         result = request.body()
+    #         if "pages" in result:
+    #             initialize(result['pages'])
+    #         else:
+    #             result = json.dumps(request.body())
+    #     return {"result": result}
