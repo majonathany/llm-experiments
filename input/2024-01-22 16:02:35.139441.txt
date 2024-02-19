@@ -1,7 +1,0 @@
-reecrit moi ce text : 
-write this email better : 
-Bonjour Alexandre,
-
-Je confirme que l'archive contient l'intégralité du code source. Concernant la base de données, une copie manuelle depuis l'environnement de préproduction sera nécessaire. Il est crucial de vérifier et de mettre à jour les informations dans le fichier /config/site.php, particulièrement si le nom ou l'identifiant de la base de données a changé dans l'environnement de production, ce qui me semble être le cas.
-
-N'hésite pas à me contacter pour toute question ou clarification

@@ -12,7 +12,6 @@ from transformers import pipeline
 
 import backend.wsgi as django_app
 
-from vllm import LLM, SamplingParams
 from torch.nn import DataParallel
 
 
@@ -393,6 +392,15 @@ def hello(request: Request):
 def test_postgres():
     pass
 
+@app.post('/api/query')
+async def query(request: Request):
+
+    from backend.llm.rag import query
+
+    try:
+        return query("Est-ce que l'adresse des travaux dans le document AUDIT ENERGETIQUE est présente ?", 'Adamtown68555')
+    except Exception as e:
+        return (f"{e} \n{traceback.format_exc()}")
 @app.get("/api/initialize")
 def hello(request: Request):
     from backend.llm.rag import initialize

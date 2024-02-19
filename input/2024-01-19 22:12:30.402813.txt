@@ -1,1 +1,0 @@
-Write me a python function that checks if a sudoku puzzle is valid.

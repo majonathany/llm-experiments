@@ -1,27 +1,22 @@
-import glob, logging
+import glob, logging, torch
 import os
 import getpass
 
-from langchain import LLMChain, PromptTemplate, OpenAI
+from langchain.chains import LLMChain
 from langchain.chains import RetrievalQA
-from langchain.chains.openai_functions import create_structured_output_chain
-from langchain.chat_models import ChatOpenAI
 
 from langchain.chains.conversational_retrieval.base import ConversationalRetrievalChain
-from langchain.memory import ConversationBufferMemory
 
 from langchain.prompts import HumanMessagePromptTemplate, ChatPromptTemplate
 from langchain.schema import SystemMessage, HumanMessage
 
-from pydantic import BaseModel, Field
-
-from langchain_mistralai import MistralAIEmbeddings
-
 
 from langchain.text_splitter import CharacterTextSplitter, TokenTextSplitter, SentenceTransformersTokenTextSplitter
 from langchain.vectorstores.pgvector import PGVector
-from langchain.document_loaders import TextLoader
+from langchain_community.document_loaders import TextLoader
 from faker import Faker
+from langchain_community.embeddings import HuggingFaceEmbeddings
+
 
 from .LLM import initialize_model
 
@@ -35,29 +30,25 @@ def collection_name():
 def initialize(textlines: list, collection_name = None):
     if not collection_name:
         collection_name = collection_name()
-    
-def get_text_chunks_langchain(text):
-    text_splitter = CharacterTextSplitter(chunk_size=500, chunk_overlap=100)
-    docs = [Document(page_content=x) for x in text_splitter.split_text(text)]
-    return docs
 
 
-CONNECTION_STRING = f"postgresql+psycopg2://postgres:{password}@localhost:5432/"
 COLLECTION_NAME = "test_8324"
 
 def db_name():
     DB_NAME = faker.first_name() + faker.zipcode()
     return DB_NAME
 
-def get_embeddings(model, tokenizer, documents):
+def get_embeddings(model, documents):
     # Put the model in "evaluation" mode, meaning feed-forward operation.
-    model.eval()
+    # tokenizer = model.tokenizer
+    # model.eval()
 
     embeddings = []
 
     for doc in documents:
         # Add special tokens adds [CLS], [SEP], etc.
-        inputs = tokenizer(doc, return_tensors="pt", padding=True, truncation=True, max_length=512)
+        # inputs = tokenizer(doc, return_tensors="pt", padding=True, truncation=True, max_length=512)
+        inputs = model.generate(doc)
 
         # Get hidden states features for each token
         with torch.no_grad():
@@ -83,32 +74,32 @@ def initialize(folder_directory=None):
     #     textfile = glob.glob(folder_directory)
     #     textlines = textfile.split("-----");
 
-    textlines = glob.glob("/home/ubuntu/llm_experiments/input/*.txt")
+    textlines = ['/Users/jonathan/work/llm_experiments/single.txt']
     db = None
 
     collection_name_elem = collection_name()
 
-    stuff = initialize_model()
-    model = stuff['model']
-    tokenizer = stuff['tokenizer']
-
+    text_splitter = SentenceTransformersTokenTextSplitter(tokens_per_chunk=384, chunk_overlap=100)
+    db = PGVector.from_documents(
+        embedding=HuggingFaceEmbeddings(),
+        documents=[],
+        collection_name=collection_name_elem,
+        connection_string=CONNECTION_STRING,
+        pre_delete_collection=True
+    )
     for t in textlines:
+        embeddings = []
         if t.endswith('.txt'):
             loader = TextLoader(t)
             documents = loader.load()
-            text_splitter = SentenceTransformersTokenTextSplitter(chunk_size=1000, chunk_overlap=100)
 
-            # documents =
             docs = text_splitter.split_documents(documents)
 
-            embeddings = get_embeddings(model, tokenizer, docs)
-
             db = PGVector.from_documents(
-                embedding=embeddings,
+                embedding=HuggingFaceEmbeddings(),
                 documents=docs,
                 collection_name=collection_name_elem,
                 connection_string=CONNECTION_STRING,
-                pre_delete_collection=True
             )
 
     if db:
@@ -138,7 +129,6 @@ def create_db(db_name):
     
 
 def test_connection_to_db(collection_name):
-    embeddings = MistralAIEmbeddings()
     DB_NAME = db_name()
     
     try:
@@ -157,10 +147,10 @@ def test_connection_to_db(collection_name):
     return False
 
 def query(question, collection_name):
-    embeddings = MistralAIEmbeddings()
+    embeddings = HuggingFaceEmbeddings()
 
     store = PGVector(
-        collection_name=collection_name,
+        collection_name='Adamtown68555',
         connection_string=CONNECTION_STRING,
         embedding_function=embeddings,
     )
@@ -169,7 +159,7 @@ def query(question, collection_name):
 
     docs_with_score = store.similarity_search_with_score(question)
     for i, doc in enumerate(docs_with_score):
-        print(f"{i + 1}.", doc.page_content, "\n")
+        print(f"{i + 1}.", doc[0].page_content, "\n")
 
 
     context = []
@@ -199,7 +189,7 @@ def query(question, collection_name):
 
     mychain = ConversationalRetrievalChain(combine_docs_chain=qa_chain, question_generator=questionGeneratorChain, retriever=store.as_retriever() )
     memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
-    qa = ConversationalRetrievalChain.from_llm(OpenAI(temperature=0), store.as_retriever(), memory=memory)
+    qa = ConversationalRetrievalChain.from_llm(llm, store.as_retriever(), memory=memory)
 
     chat_history = []
 

@@ -1,3 +1,0 @@
-Etiquettes IA	Étiquettes Ynergie	Autre	Devis	Cadre de contribution	Facture	AH	Fiche visite préalabe	Feuille cadastrale	Photo après	Rapport contrôle qualité	Fiche dimensionnement	Avis d'imposition	Justif domicile	Justif d'éligibilité	Attestation réception pièces	PV réception	Synthèse	Fiche bilan
-
-Write the above values as a bulleted list.

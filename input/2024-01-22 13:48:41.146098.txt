@@ -1,3 +1,0 @@
-can you write a JSON containing information about an apple.
-
-Your json: 
